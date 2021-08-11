@@ -1,0 +1,25 @@
+{
+  "name": "Coding-Kai",
+  "version": "1.0.0",
+  "description": "<img src='https://img.shields.io/badge/License-MIT-yellow.svg'>",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlward639/Coding-Kai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mlward639/Coding-Kai/issues"
+  },
+  "homepage": "https://github.com/mlward639/Coding-Kai#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "sequelize": "^6.6.5"
+  }
+}
