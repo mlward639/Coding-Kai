@@ -24,7 +24,7 @@ const CharacterSchema = new Schema({
   level: {
     type: Number,
     trim: true,
-    required: 'Username is Required',
+    required: 'Name is Required',
   },
 });
 
