@@ -1,3 +1,4 @@
+/* SQL 
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 class Character extends Model {}
@@ -40,3 +41,4 @@ Character.init(
 );
 
 module.exports = Character;
+*/
