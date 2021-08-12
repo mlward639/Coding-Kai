@@ -55,6 +55,6 @@ Screenshot of
 
 ## URLs
 
-<a href="https://github.com/mlward639/Project-3">Link to GitHub Repository</a> UPDATE LINK WHEN NAME CHANGES
+<a href="https://github.com/mlward639/Coding-Kai">Link to GitHub Repository</a> UPDATE LINK WHEN NAME CHANGES
 
 <a href="#">Link to Deployed Application</a>
