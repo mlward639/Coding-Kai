@@ -4,6 +4,7 @@ import "./App.css";
 import Player from "./components/player";
 import Homepage from "./pages/Homepage";
 import Storypage from "./pages/Storypage";
+import PausePage from "./pages/PausePage";
 
 //routing NOT working
 export default function App() {
@@ -16,6 +17,9 @@ export default function App() {
           </Route>
           <Route path="/story">
             <Storypage />
+          </Route>
+          <Route path="/pause">
+            <PausePage />
           </Route>
         </Switch>
       </div>

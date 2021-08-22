@@ -105,6 +105,13 @@ body {
 
 .storyImgContainer {
   border: solid 2px red;
+  /* background-image: url("./images/dojo.jpg");
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; */
 }
 
 .dojo-pic {
@@ -142,4 +149,59 @@ body {
   align-items: center;
   padding-right: 40px;
   padding-bottom: 20px;
+}
+
+/* PAUSE PAGE */
+.pausePageDiv {
+  color: white;
+  /* border: 2px solid pink; */
+}
+
+.pausePageDiv h1 {
+  text-align: center;
+  font-size: 34px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.StatsSection {
+  /* border: 2px solid white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.characterName2 {
+  margin: 0; /* cant get character name to move up on the card */
+}
+
+.statsCard {
+  width: 35%;
+}
+
+.pauseBtnsDiv {
+  /* border: 2px solid purple; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pauseBtnsDiv button {
+  background-color: yellow;
+  border-radius: 25px;
+  margin-right: 8px;
+  padding: 10px;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.characterImgPauseDiv {
+  /* border: 2px solid orange; */
+  margin-top: 10px;
+}
+
+.characterImgPause {
 }
