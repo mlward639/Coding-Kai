@@ -93,3 +93,53 @@ body {
   font-size: 24px;
   font-weight: bold;
 }
+
+.container {
+  border: solid 2px green;
+}
+
+/* STORY PAGE */
+.storyContainer {
+  border: solid 2px yellow; /* cant make this equal the whole width of the page or center on the screen */
+}
+
+.storyImgContainer {
+  border: solid 2px red;
+}
+
+.dojo-pic {
+  position: relative;
+  z-index: -1;
+}
+
+.storyDescContainer {
+  border: 2px solid blue;
+  margin-top: -15%;
+  display: flex;
+  background-color: var(--darkGray);
+  opacity: 0.85;
+  z-index: 1;
+}
+
+.storyDescContainer p {
+  color: white;
+  padding: 15px;
+}
+
+.storyNextBtn {
+  border-radius: 20px;
+  background-color: yellow;
+  padding: 7px;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.storyNext {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 40px;
+  padding-bottom: 20px;
+}
