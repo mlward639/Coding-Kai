@@ -1,0 +1,95 @@
+:root {
+  --darkGray: rgb(22, 22, 22);
+  --mediumGray: rgb(31, 31, 31);
+  --lightGray: rgba(224, 212, 212, 0.596);
+  --lightGray2: rgb(224, 212, 212);
+  --hotPink: rgb(255, 109, 199);
+}
+
+body {
+  background-color: black;
+}
+
+/*HOMEPAGE*/
+.welcomeHomepage {
+  color: white;
+  text-align: center;
+  /* border: 2px solid white; */
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 70px;
+}
+
+.characterCardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.characterCard {
+  padding-bottom: 10px;
+  background-color: var(--mediumGray);
+  border-radius: 25px;
+  border: none;
+  width: 25%;
+  margin-left: 6%;
+}
+
+.characterName {
+  color: var(--hotPink);
+  line-height: 1.2;
+  padding-bottom: 10px;
+}
+
+.characterImg {
+  background-color: white;
+}
+
+.characterHP,
+.characterAttack,
+.characterExperience,
+.characterLevel {
+  color: white;
+  line-height: 1.6;
+}
+
+.resumeGame,
+.deleteGame {
+  border-radius: 25px;
+  background-color: var(--hotPink);
+  padding: 6px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  transition: box-shadow 0.3s;
+  display: inline-flex;
+  flex-wrap: wrap;
+  /* justify-content: center; NOT WORKING TO CENTER BUTTONS ON SMALLER SCREEN. WORKS WITH DISPLAY FLEX BUT THEN ON BIGGER SCREENS, IT PUTS THE BUTTONS ON 2 LINES INSTEAD OF ONE */
+}
+
+.resumeGame:hover,
+.deleteGame:hover {
+  box-shadow: 3px 3px 8px var(--lightGray);
+}
+
+.resumeGame {
+  margin-right: 10px;
+}
+
+.startNewGameContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.startNewGame {
+  background-color: var(--hotPink);
+  color: black;
+  border-radius: 25px;
+  padding: 7px;
+  padding-right: 25px;
+  padding-left: 25px;
+  font-size: 24px;
+  font-weight: bold;
+}
