@@ -4,6 +4,7 @@
   --lightGray: rgba(224, 212, 212, 0.596);
   --lightGray2: rgb(224, 212, 212);
   --hotPink: rgb(255, 109, 199);
+  --red: rgb(177, 19, 19);
 }
 
 body {
@@ -95,7 +96,9 @@ body {
 }
 
 .container {
-  border: solid 2px green;
+  /* border: solid 2px green; */
+  margin-left: 5px;
+  width: 100vw; /*whjy isnt it equal to the width of screen and image??? */
 }
 
 /* STORY PAGE */
@@ -204,4 +207,197 @@ body {
 }
 
 .characterImgPause {
+}
+
+/* FIGHT PAGE */
+
+.fightPageContainer {
+  /* border: 2px rgb(121, 92, 121) solid; */
+  display: relative;
+  z-index: 1;
+  width: 100%;
+  margin-left: 4px;
+}
+
+.fightBackgroundImg {
+  /* border: 2px solid red; */
+  height: 450px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  z-index: -1;
+  top: 12%;
+  position: absolute;
+}
+
+.fightPageContainer h1 {
+  color: var(--red);
+  text-align: center;
+  font-weight: bold;
+  font-size: 38px;
+  margin-top: 5px;
+}
+
+.fightDiv {
+  /* border: 2px solid teal; */
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 250px;
+}
+
+.characterFight,
+.enemyFight {
+  /* border: 2px yellow solid; */
+  height: 170px;
+  background-color: rgb(31, 31, 31, 0.9);
+  color: #ffffff;
+  width: 20%;
+  text-align: center;
+}
+
+.characterFight {
+  margin-left: 15px;
+}
+
+.enemyFight {
+  margin-right: 15px;
+}
+
+.characterFightImg,
+.enemyFightImg {
+  /* border: 2px white solid;
+  background-color: violet; */
+  width: 85px;
+  height: auto;
+}
+
+.characterFightImgDiv,
+.enemyFightImgDiv {
+  /* border: 2px white solid;
+  background-color: violet; */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.characterFightName,
+.enemyFightName {
+  margin-bottom: 10px;
+}
+
+.healthBar,
+.enemyHealthBar {
+  border: 2px solid green;
+  background-color: green;
+  margin-top: 10px;
+}
+
+.startBtnDiv {
+  /* border: 2px solid pink; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(31, 31, 31, 0.9);
+  height: 80px;
+  width: 140px;
+}
+
+.startBtn {
+  background-color: var(--red);
+  border-radius: 25px;
+  padding: 3px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* question portion of fight */
+.questionForm {
+  width: 50%;
+  border: solid 5px var(--red);
+  background-color: var(--mediumGray);
+}
+
+.answerChoices {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--mediumGray);
+}
+
+.question {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.answerDiv {
+  /* border: 2px solid yellow; */
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.submitBtn {
+  border: 4px solid var(--red);
+  background-color: var(--darkGray);
+  border-radius: 25px;
+}
+
+.submitBtn:hover {
+  background-color: var(--red);
+}
+
+.checkboxLabel {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.checkmark {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: var(--darkGray);
+  border: 2px solid black;
+}
+
+.checkboxLabel:hover input ~ .checkmark {
+  background-color: white;
+}
+
+.checkboxLabel input:active ~ .checkmark {
+  background-color: var(--red);
+}
+
+.checkboxLabel input:checked ~ .checkmark {
+  background-color: var(--red);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkboxLabel input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkboxLabel .checkmark:after {
+  left: 8px;
+  bottom: 5px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 4px 4px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }

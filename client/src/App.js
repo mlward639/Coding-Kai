@@ -5,6 +5,8 @@ import Player from "./components/player";
 import Homepage from "./pages/Homepage";
 import Storypage from "./pages/Storypage";
 import PausePage from "./pages/PausePage";
+import FightPage from "./pages/FightPage";
+import FightPageQuestion from "./pages/FightPageQuestion";
 
 //routing NOT working
 export default function App() {
@@ -20,6 +22,12 @@ export default function App() {
           </Route>
           <Route path="/pause">
             <PausePage />
+          </Route>
+          <Route path="/fight">
+            <FightPage />
+          </Route>
+          <Route path="/question">
+            <FightPageQuestion />
           </Route>
         </Switch>
       </div>
