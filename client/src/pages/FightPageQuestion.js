@@ -23,8 +23,8 @@ const FightPage = () => {
           <EnemyFight /> */}
         </div>
         <div className="questionModalDiv">
-          <QuestionModalCorrect />
-          {/* <QuestionModalIncorrect /> */}
+          {/* <QuestionModalCorrect /> */}
+          <QuestionModalIncorrect />
         </div>
       </div>
     </>
