@@ -6,6 +6,8 @@ import React from "react";
 import CharacterFight from "../components/fight/character";
 import EnemyFight from "../components/fight/enemy";
 import QuestionFight from "../components/fight/question";
+import QuestionModalCorrect from "../components/fight/modalCorrect";
+import QuestionModalIncorrect from "../components/fight/modalWrong";
 
 const FightPage = () => {
   // const { loading, data } = useQuery(QUERY_PROFILES);
@@ -15,14 +17,20 @@ const FightPage = () => {
     <>
       <div className="fightPageContainer">
         <h1>FIGHT</h1>
-        <div className="fightDiv">
-          <CharacterFight />
+        <div className="fightDiv2">
+          {/* <CharacterFight />
           <QuestionFight />
-          <EnemyFight />
+          <EnemyFight /> */}
+        </div>
+        <div className="questionModalDiv">
+          <QuestionModalCorrect />
+          {/* <QuestionModalIncorrect /> */}
         </div>
       </div>
     </>
   );
 };
+
+//Set question modal to come up on clicking submit on questionFight component
 
 export default FightPage;

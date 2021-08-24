@@ -103,11 +103,11 @@ body {
 
 /* STORY PAGE */
 .storyContainer {
-  border: solid 2px yellow; /* cant make this equal the whole width of the page or center on the screen */
+  /* border: solid 2px yellow; cant make this equal the whole width of the page or center on the screen */
 }
 
 .storyImgContainer {
-  border: solid 2px red;
+  /* border: solid 2px red; */
   /* background-image: url("./images/dojo.jpg");
   background-color: #cccccc;
   height: 500px;
@@ -120,15 +120,17 @@ body {
 .dojo-pic {
   position: relative;
   z-index: -1;
+  margin-left: 10px;
 }
 
 .storyDescContainer {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   margin-top: -15%;
   display: flex;
-  background-color: var(--darkGray);
-  opacity: 0.85;
+  background-color: rgb(22, 22, 22, 0.85);
   z-index: 1;
+  margin-left: 10px;
+  width: 100%;
 }
 
 .storyDescContainer p {
@@ -151,7 +153,6 @@ body {
   justify-content: flex-end;
   align-items: center;
   padding-right: 40px;
-  padding-bottom: 20px;
 }
 
 /* PAUSE PAGE */
@@ -209,6 +210,7 @@ body {
 .characterImgPause {
 }
 
+/* ---------------------------------------- */
 /* FIGHT PAGE */
 
 .fightPageContainer {
@@ -246,6 +248,16 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 250px;
+}
+
+.fightDiv2 {
+  /* border: 2px solid silver; */
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .characterFight,
@@ -400,4 +412,34 @@ input[type="checkbox"] {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+/* question answer modal */
+
+.modalBehindBackground {
+  background-color: var(--darkGray);
+}
+.modalBackground {
+  background-color: var(--lightGray2);
+}
+
+.icon {
+  color: var(--red);
+}
+
+.modalTitle {
+  font-size: 32px;
+}
+
+.modalP {
+  font-size: 20px;
+  color: var(--darkGray);
+}
+
+.congratsReturnBtn {
+  background-color: var(--red);
+}
+
+.congratsReturnBtn:hover {
+  background-color: rgb(134, 14, 14);
 }
