@@ -1,5 +1,5 @@
 import React from "react";
-// import # from "../components/#";
+import { Link } from "react-router-dom";
 // import { useQuery } from "@apollo/client";
 // import { QUERY_PROFILES } from "../utils/queries";
 import CharacterCards from "../components/characterCards/CharacterCards";
@@ -17,10 +17,14 @@ const Homepage = () => {
         <CharacterCards />
       </div>
       <div className="startNewGameContainer">
-        <button className="startNewGame">Start a new game</button>
+        <Link to="/story">
+          <button className="startNewGame">Start a new game</button>
+        </Link>
       </div>
     </>
   );
 };
 
 export default Homepage;
+
+//DO WE WANT A SELECT CHARACTER PAGE (so when they click start new game, it takes them to select character page)?? Or just randomly assign them a character??

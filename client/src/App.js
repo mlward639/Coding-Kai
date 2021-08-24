@@ -7,6 +7,7 @@ import Storypage from "./pages/Storypage";
 import PausePage from "./pages/PausePage";
 import FightPage from "./pages/FightPage";
 import FightPageQuestion from "./pages/FightPageQuestion";
+import QuitPage from "./pages/QuitPage";
 
 //routing NOT working
 export default function App() {
@@ -28,6 +29,9 @@ export default function App() {
           </Route>
           <Route path="/question">
             <FightPageQuestion />
+          </Route>
+          <Route path="/quit">
+            <QuitPage />
           </Route>
         </Switch>
       </div>

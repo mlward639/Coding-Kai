@@ -32,3 +32,5 @@ const Storypage = () => {
 };
 
 export default Storypage;
+
+// Add link to the map page to begin game

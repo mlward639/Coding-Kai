@@ -443,3 +443,43 @@ input[type="checkbox"] {
 .congratsReturnBtn:hover {
   background-color: rgb(134, 14, 14);
 }
+
+/* QUIT PAGE */
+
+.QuitGameDiv {
+  /* border: 2px solid yellow; */
+  height: 100vh;
+  width: 100vw;
+}
+
+.quitPageTitle {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  /* border: 2px solid purple; */
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.quitPageSubtitle {
+  font-size: 24px;
+  color: white;
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+}
+
+.quitScores {
+  /* border: 2px solid orange; */
+  display: flex;
+  justify-content: center;
+  margin-top: 45px;
+}
+
+.startNewGameDiv {
+  /* border: 2px solid greenyellow; */
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}

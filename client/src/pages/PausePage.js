@@ -1,5 +1,5 @@
 import React from "react";
-// import # from "../components/#";
+import { Link } from "react-router-dom";
 // import { useQuery } from "@apollo/client";
 // import { QUERY_PROFILES } from "../utils/queries";
 import StatsCards from "../components/stats/statsCards";
@@ -17,8 +17,12 @@ const PausePage = () => {
         </div>
         <div className="pauseBtnsDiv">
           <button>Resume Game</button>
-          <button>Save & Quit Game</button>
-          <button>Quit Game</button>
+          <Link to="/quit">
+            <button>Save & Quit Game</button>
+          </Link>
+          <Link to="/quit">
+            <button>Quit Game</button>
+          </Link>
         </div>
       </div>
     </>
@@ -26,3 +30,6 @@ const PausePage = () => {
 };
 
 export default PausePage;
+
+//add link to ResumeGame BTN to return to map.
+//add functionality to save score if they choose save and quit or delete ??local storage?? with current score if they click quit game
