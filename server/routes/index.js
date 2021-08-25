@@ -1,10 +1,5 @@
 const router = require('express').Router();
-// const apiRoutes = require('./api');
+// homeroutes does the following: login,signup,delete, and update
 const homeRoutes = require('./homeroutes');
-
-
 router.use('/api', homeRoutes);
-
-// router.use('/api', apiRoutes);
-
 module.exports = router;

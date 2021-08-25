@@ -3,8 +3,28 @@
 const router = require('express').Router();
 const { User } = require('../models/User');
 const userControllers = require("../../controllers/userControllers.js");
-const { findUsers } = require('../../controllers/userControllers.js');
 
+
+router.route("/signup")
+  .post(userControllers.createUser); 
+
+router.route("/userLogin")
+  .put(userControllers.login); 
+
+router.route("/updateUser")
+  .put(userControllers.update); 
+
+router.route("/deleteUser")
+  .delete(userControllers.delete); 
+
+router.route("/getUsers")
+  .get(userControllers.findUsers); 
+
+//how are we setting up logged in/out sessions? werent we doing sequelize with session before?
+module.exports = router;
+
+
+//===CHECK FOR LATER======================================================================================
 // Get HOMEPAGE
 
 // router.get('/', (req, res) => {
@@ -65,36 +85,4 @@ const { findUsers } = require('../../controllers/userControllers.js');
 //       res.json(err);
 //     });
 // });
-
-router.route("/signup")
-  .post(userControllers.createUser); 
-  // SAVE SESSION 
-// use put to make secure 
-router.route("/userLogin")
-  .put(userControllers.login); 
-
-router.route("/updateUser")
-  .put(userControllers.update); 
-
-router.route("/deleteUser")
-  .delete(userControllers.delete); 
-
-router.route("/getUsers")
-  .get(userControllers.findUsers); 
-
-
-
-
-// //Log out and delete session data
-// router.post('/logout', (req, res) => {
-//   if (req.session.logged_in) {
-//     req.session.destroy(() => {
-//       res.status(204).end();
-//     });
-//   } else {
-//     res.status(404).end();
-//   }
-// });
-
-//how are we setting up logged in/out sessions? werent we doing sequelize with session before?
-module.exports = router;
+//========================================================================================================
