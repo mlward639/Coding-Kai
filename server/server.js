@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const db = require('./config/connection');
 const routes = require('./routes');
-const models = require('./models')
+const models = require('./models');
 // NOTE: perhaps need for later?
 // const sequelize = require('./config/connection');
 // const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -25,7 +25,7 @@ const sess = {
 };
 app.use(session(sess));
 //  SET UP MIDDLEWARE
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public'))); // are we using a public folder or client folder??
 //move to config
@@ -51,7 +51,7 @@ db.once('open', () => {
   app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
   });
-}
+});
 //====================================================================================================
 // DELETE LATER
 //----------------------------------------------------
