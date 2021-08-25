@@ -1,3 +1,17 @@
+const mongoose = require('mongoose');
+
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/codingKai_db',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  }
+);
+
+module.exports = mongoose.connection;
+
 /* Is this page needed with mongoose?? dont we just need this line (present in server.js now)
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
   useNewUrlParser: true,

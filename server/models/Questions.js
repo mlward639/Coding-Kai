@@ -45,7 +45,7 @@ const QuestionSchema = new Schema({
     trim: true,
   },
   tags: {
-    type: String,
+    type: Array,
     trim: true,
   },
   category: {
