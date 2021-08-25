@@ -52,6 +52,9 @@ db.once('open', () => {
     console.log(`App running on port ${PORT}!`);
   });
 });
+
+module.exports = mongoose.connection; // required for seeds
+
 //====================================================================================================
 // DELETE LATER
 //----------------------------------------------------
