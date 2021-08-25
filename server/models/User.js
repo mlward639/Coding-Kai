@@ -17,8 +17,10 @@ const UserSchema = new Schema({
   },
   character_id: [
     {
-      type: Schema.Types.ObjectId,
-      ref: 'Character',
+      type: Number,
+      // TODO: 
+      // type: Schema.Types.ObjectId,
+      //ref: 'Character',
     },
   ],
 });
