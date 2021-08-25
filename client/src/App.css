@@ -25,6 +25,8 @@ body {
 .characterCardsContainer {
   display: flex;
   flex-wrap: wrap;
+  /* border: 2px solid yellow; */
+  width: 99vw;
 }
 
 .characterCard {
@@ -33,7 +35,8 @@ body {
   border-radius: 25px;
   border: none;
   width: 25%;
-  margin-left: 6%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .characterName {
@@ -65,7 +68,6 @@ body {
   transition: box-shadow 0.3s;
   display: inline-flex;
   flex-wrap: wrap;
-  /* justify-content: center; NOT WORKING TO CENTER BUTTONS ON SMALLER SCREEN. WORKS WITH DISPLAY FLEX BUT THEN ON BIGGER SCREENS, IT PUTS THE BUTTONS ON 2 LINES INSTEAD OF ONE */
 }
 
 .resumeGame:hover,
@@ -96,9 +98,9 @@ body {
 }
 
 .container {
-  /* border: solid 2px green; */
-  margin-left: 5px;
-  width: 100vw; /*whjy isnt it equal to the width of screen and image??? */
+  border: solid 2px green;
+  width: 100vw; /*whjy isnt it equal to the width of screen and image???*/
+  height: 100vh;
 }
 
 /* STORY PAGE */
@@ -482,4 +484,80 @@ input[type="checkbox"] {
   display: flex;
   justify-content: center;
   margin-top: 25px;
+}
+
+/* additional media queries */
+@media screen and (max-width: 992px) {
+  /*homepage*/
+  .resumeGame,
+  .deleteGame {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /*homepage*/
+  .characterCard {
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
+  .startNewGameContainer {
+    margin-bottom: 10px;
+    margin-top: 0px;
+  }
+  .resumeGame,
+  .deleteGame {
+    display: flex;
+    justify-content: center;
+  }
+  /* Story page */
+  .storyDescContainer {
+    margin-top: -20%;
+  }
+  /*fightpage*/
+  .characterFight,
+  .enemyFight {
+    width: 30%;
+  }
+  /* .characterFightQuestionPage,
+  .enemyFightQuestionPage {
+   visibility: hidden; 
+    border: 2px solid pink;
+  } COME BACK TO THIS SHIT *** */
+}
+
+@media screen and (max-width: 576px) {
+  /*homepage*/
+  .characterCardsContainer {
+    display: block;
+  }
+  .characterCard {
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+  }
+  .startNewGameContainer {
+    margin-bottom: 10px;
+    margin-top: 0px;
+  }
+  .resumeGame,
+  .deleteGame {
+    display: flex;
+    justify-content: center;
+  }
+  /* Story page */
+  .storyDescContainer {
+    margin-top: -25%;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  /* Story page */
+  .storyDescContainer {
+    margin-top: -55%;
+  }
 }
