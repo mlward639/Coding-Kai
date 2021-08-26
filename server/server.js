@@ -2,7 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const mongoose = require('mongoose');
 const path = require('path');
-const routes = require('./routes'); 
+const routes = require('./routes');
 // NOTE: perhaps need for later? 
   // const sequelize = require('./config/connection');
   // const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -26,10 +26,15 @@ app.use(session(sess));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public'))); // are we using a public folder or client folder?? 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/codingKai_db', {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-});
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/codingKai_db',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: true,
+  }
+);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));

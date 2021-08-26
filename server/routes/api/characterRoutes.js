@@ -3,11 +3,12 @@ const Character = require('../models/Character');
 
 router.get('/', async (req, res) => {
     try {
-        const characterData = await Character.findAll();
+        const characterData = await Character.find();
         if (!characterData) {
             res.status(404).json({ message: "No enemies found! " });
             return;
         }
+        console.log("Characters: ", characterData);
 
         res.status(200).json(characterData);
     } catch (err) {
