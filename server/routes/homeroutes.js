@@ -2,25 +2,20 @@
 
 const router = require('express').Router();
 const { User } = require('../models/User');
-const userControllers = require("../../controllers/userControllers.js");
+const userControllers = require('../../controllers/userControllers.js');
 
-// routes for user authentication
-router.route("/signup")
-  .post(userControllers.createUser); 
+router.route('/signup').post(userControllers.createUser);
 
-router.route("/userLogin")
-  .put(userControllers.login); 
+router.route('/userLogin').put(userControllers.login);
 
-router.route("/updateUser")
-  .put(userControllers.update); 
+router.route('/updateUser').put(userControllers.update);
 
-router.route("/deleteUser")
-  .delete(userControllers.delete); 
+router.route('/deleteUser').delete(userControllers.delete);
 
-router.route("/getUsers")
-  .get(userControllers.findUsers); 
+router.route('/getUsers').get(userControllers.findUsers);
+
+//how are we setting up logged in/out sessions? werent we doing sequelize with session before?
 module.exports = router;
-
 
 //===CHECK FOR LATER======================================================================================
 // Get HOMEPAGE

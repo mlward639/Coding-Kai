@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function useWalk(maxSteps) {
-    const [position, setPosition] = useState({x: 0, y: 0});
+    const [position, setPosition] = useState({x: 320, y: 144});
     const [dir, setDir] = useState(0);
     const[step, setStep] =useState(0);
 
