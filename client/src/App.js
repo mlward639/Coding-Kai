@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Player from "./components/player";
+// import Player from "./components/player";
 import Homepage from "./pages/Homepage";
 import Storypage from "./pages/Storypage";
 import PausePage from "./pages/PausePage";
@@ -11,6 +11,7 @@ import QuitPage from "./pages/QuitPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import MeetTeamPage from "./pages/meetTeam";
+import Canvas from "./components/Canvas/Canvas";
 
 //routing NOT working
 export default function App() {
@@ -44,6 +45,9 @@ export default function App() {
           </Route>
           <Route path="/meet">
             <MeetTeamPage />
+          </Route>
+          <Route path="/game">
+            <Canvas />
           </Route>
         </Switch>
       </div>

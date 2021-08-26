@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // import # from "../components/#";
 // import { useQuery } from "@apollo/client";
 // import { QUERY_PROFILES } from "../utils/queries";
@@ -23,7 +24,9 @@ const Storypage = () => {
             Placeholder... Placeholder... Placeholder...
           </p>
           <div className="storyNext">
+            <Link to="/game">
             <button className="storyNextBtn">Next</button>
+            </Link>
           </div>
         </div>
       </div>
