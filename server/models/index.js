@@ -4,6 +4,7 @@ module.exports = {
   Character: require('./Character'),
   Enemy: require('./Enemy'),
   User: require('./User'),
+  Questions: require('./Questions'),
 };
 
 /* SQL 
