@@ -1,0 +1,13 @@
+.gameMap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vh;
+    
+}
+
+Canvas {
+    position:absolute;
+    top: 144px; 
+    left:320px;
+}

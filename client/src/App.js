@@ -1,13 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Player from "./components/player";
+// import Player from "./components/player";
 import Homepage from "./pages/Homepage";
 import Storypage from "./pages/Storypage";
 import PausePage from "./pages/PausePage";
 import FightPage from "./pages/FightPage";
 import FightPageQuestion from "./pages/FightPageQuestion";
 import QuitPage from "./pages/QuitPage";
+import Canvas from './components/Canvas/Canvas'
 
 //routing NOT working
 export default function App() {
@@ -32,6 +33,9 @@ export default function App() {
           </Route>
           <Route path="/quit">
             <QuitPage />
+          </Route>
+          <Route path="/game">
+            <Canvas />
           </Route>
         </Switch>
       </div>
