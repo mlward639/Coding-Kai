@@ -641,6 +641,45 @@ input[type="checkbox"] {
   margin-top: 25px;
 }
 
+/*MEET TEAM PAGE*/
+.MeetTeamPageContainer {
+  border: 2px solid white;
+  /* background-color: black; */
+  width: 100vw;
+}
+
+.meetTeamTitle {
+  color: black;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.CB,
+.ZK,
+.JR,
+.MW {
+  border: 2px solid orange;
+  width: 100%;
+}
+
+.profilePic {
+  height: auto;
+}
+
+.teamSubtitle {
+  font-style: italic;
+}
+
+.contact-item {
+  display: inline;
+  margin-right: 10px;
+  font-size: 30px;
+}
+
 .meetReturnBtn {
   background-color: white;
 }
+/*ADD MEDIA QUERIES for team page*/
