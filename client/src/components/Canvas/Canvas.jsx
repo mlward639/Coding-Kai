@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useRef, useEffect } from 'react'
 import "./canvas.css"
 import Player from "../player"  
@@ -13,8 +14,8 @@ const Canvas = props => {
     // img.src= '../../../public/sprites/skins/f2.png';
 
     const gameMap = [
-        1, 6, 6, 2, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 4, 4, 4, 4, 2, 2,
-        1, 6, 6, 2, 2, 2, 2, 2, 3, 3, 2, 2, 3, 2, 4, 0, 0, 4, 2, 2,
+        1, 4, 4, 2, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 4, 4, 4, 4, 2, 2,
+        1, 4, 4, 2, 2, 2, 2, 2, 3, 3, 2, 2, 3, 2, 4, 0, 0, 4, 2, 2,
         5, 5, 5, 5, 2, 2, 4, 4, 5, 5, 4, 5, 5, 2, 2, 5, 5, 2, 2, 2,
         2, 2, 5, 5, 2, 2, 4, 0, 5, 5, 4, 5, 5, 2, 2, 5, 5, 4, 4, 2,
         2, 2, 5, 5, 4, 4, 4, 4, 5, 5, 0, 5, 5, 4, 4, 5, 5, 0, 4, 2,
