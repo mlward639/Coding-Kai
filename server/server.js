@@ -25,7 +25,8 @@ app.use(session(sess));
 //  SET UP MIDDLEWARE
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public'))); // are we using a public folder or client folder?? 
+app.use(express.static(path.join(__dirname, 'public'))); // are we using a public folder or client folder??
+
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost/codingKai_db',
   {
@@ -40,9 +41,9 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../client/build/index.html'));
+// });
 
 // routes 
 app.use(routes); 
