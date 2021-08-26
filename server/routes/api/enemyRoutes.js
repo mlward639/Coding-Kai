@@ -1,4 +1,4 @@
-const router = require("express").Router();
+const router = require('express').Router();
 const Enemy = require('../../models/Enemy');
 
 // Get all enemies from db
@@ -14,23 +14,27 @@ router.get('/', async (req, res) => {
     } catch (err) {
         res.status(400).json(err);
     }
-    
+
+    res.status(200).json(enemyData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
 // Get enemy by id
 router.get('/:id', async (req, res) => {
-    try {
-        const enemyData = await Enemy.findOne({
-            _id: req.params.id,
-        });
-        if (!enemyData) {
-            res.status(404).json({ message: "No enemy with this name found!" });
-        }
-
-        res.status(200).json(enemyData);
-    } catch (err) {
-        res.status(400).json(err);
+  try {
+    const enemyData = await Enemy.findOne({
+      _id: req.params.id,
+    });
+    if (!enemyData) {
+      res.status(404).json({ message: 'No enemy with this name found!' });
     }
+
+    res.status(200).json(enemyData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
 module.exports = router;

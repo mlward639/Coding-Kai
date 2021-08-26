@@ -11,6 +11,163 @@ body {
   background-color: black;
 }
 
+/*LOGIN and SIGNUP PAGE*/
+
+.signupPageContainer,
+.loginPageContainer {
+  border: 2px solid pink;
+  width: 100vw;
+}
+
+.signupContainer,
+.loginContainer {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  border: 2px purple solid;
+}
+
+.signupCard,
+.loginCard {
+  background-color: var(--mediumGray);
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  width: 45%;
+  border: none;
+}
+
+.signupForm,
+.loginForm {
+  border: 2px solid red;
+  width: 115%;
+  height: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.signupTitle,
+.loginTitle {
+  text-align: center;
+  color: white;
+}
+
+.loginTitle {
+  margin-bottom: 25px;
+}
+
+.usernameDiv,
+.emailDiv,
+.passwordDiv,
+.confirmDiv {
+  border: 2px solid teal;
+  padding-bottom: 6px;
+  padding-top: 6px;
+  margin-bottom: 9px;
+  box-sizing: border-box;
+  color: white;
+  width: 100%;
+}
+
+.usernameSignupInput,
+.emailSignupInput,
+.passwordSignupInput,
+.confirmSignupInput {
+  float: right;
+  width: 70%;
+  padding-left: 6px;
+  color: var(--darkGray);
+}
+
+.usernameLoginInput,
+.passwordLoginInput {
+  float: right;
+  width: 68%;
+  padding-left: 6px;
+}
+
+.submitBtnDiv {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.submitSignupBtn,
+.submitLoginBtn {
+  background-color: var(--hotPink);
+  border-radius: 25px;
+  width: 50%;
+}
+
+.loginInstead,
+.signupInstead {
+  color: white;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.footerContainer {
+  color: white;
+  border: 2px solid tan;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.headerContainer {
+  border: 2px solid tan;
+  display: block;
+  text-align: center;
+}
+
+.ninjaImgDiv {
+  border: 2px solid brown;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.ninjaImg {
+  width: 10%;
+  height: auto;
+}
+
+.headerText {
+  color: var(--hotPink);
+  border: 2px solid orange;
+}
+
+.headerTitle {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.headerSubtitle {
+  margin-bottom: 20px;
+}
+
+.meetTeam,
+.copyright {
+  border: 2px solid blue;
+  width: 20%;
+  display: inline;
+  font-size: 18px;
+}
+
+.copyright {
+  margin-left: 45px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.meetTeam {
+  margin-right: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
 /*HOMEPAGE*/
 .welcomeHomepage {
   color: white;
@@ -25,6 +182,8 @@ body {
 .characterCardsContainer {
   display: flex;
   flex-wrap: wrap;
+  /* border: 2px solid yellow; */
+  width: 99vw;
 }
 
 .characterCard {
@@ -33,7 +192,8 @@ body {
   border-radius: 25px;
   border: none;
   width: 25%;
-  margin-left: 6%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .characterName {
@@ -65,7 +225,6 @@ body {
   transition: box-shadow 0.3s;
   display: inline-flex;
   flex-wrap: wrap;
-  /* justify-content: center; NOT WORKING TO CENTER BUTTONS ON SMALLER SCREEN. WORKS WITH DISPLAY FLEX BUT THEN ON BIGGER SCREENS, IT PUTS THE BUTTONS ON 2 LINES INSTEAD OF ONE */
 }
 
 .resumeGame:hover,
@@ -96,9 +255,9 @@ body {
 }
 
 .container {
-  /* border: solid 2px green; */
-  margin-left: 5px;
-  width: 100vw; /*whjy isnt it equal to the width of screen and image??? */
+  border: solid 2px green;
+  width: 100vw; /*whjy isnt it equal to the width of screen and image???*/
+  height: 100vh;
 }
 
 /* STORY PAGE */
@@ -483,3 +642,121 @@ input[type="checkbox"] {
   justify-content: center;
   margin-top: 25px;
 }
+
+/* additional media queries */
+@media screen and (max-width: 992px) {
+  /*homepage*/
+  .resumeGame,
+  .deleteGame {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /*homepage*/
+  .characterCard {
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
+  .startNewGameContainer {
+    margin-bottom: 10px;
+    margin-top: 0px;
+  }
+  .resumeGame,
+  .deleteGame {
+    display: flex;
+    justify-content: center;
+  }
+  /* Story page */
+  .storyDescContainer {
+    margin-top: -20%;
+  }
+  /*fightpage*/
+  .characterFight,
+  .enemyFight {
+    width: 30%;
+  }
+  /* .characterFightQuestionPage,
+  .enemyFightQuestionPage {
+   visibility: hidden; 
+    border: 2px solid pink;
+  } COME BACK TO THIS SHIT *** */
+}
+
+@media screen and (max-width: 576px) {
+  /*homepage*/
+  .characterCardsContainer {
+    display: block;
+  }
+  .characterCard {
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+  }
+  .startNewGameContainer {
+    margin-bottom: 10px;
+    margin-top: 0px;
+  }
+  .resumeGame,
+  .deleteGame {
+    display: flex;
+    justify-content: center;
+  }
+  /* Story page */
+  .storyDescContainer {
+    margin-top: -25%;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  /* Story page */
+  .storyDescContainer {
+    margin-top: -55%;
+  }
+}
+/*MEET TEAM PAGE*/
+.MeetTeamPageContainer {
+  border: 2px solid white;
+  /* background-color: black; */
+  width: 100vw;
+}
+
+.meetTeamTitle {
+  color: black;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.CB,
+.ZK,
+.JR,
+.MW {
+  border: 2px solid orange;
+  width: 100%;
+}
+
+.profilePic {
+  height: auto;
+}
+
+.teamSubtitle {
+  font-style: italic;
+}
+
+.contact-item {
+  display: inline;
+  margin-right: 10px;
+  font-size: 30px;
+}
+
+.meetReturnBtn {
+  background-color: white;
+}
+/*ADD MEDIA QUERIES for team page*/

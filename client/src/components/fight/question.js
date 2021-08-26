@@ -18,28 +18,28 @@ const QuestionFight = () => {
                   className=" checkbox answerA"
                   value="A"
                 />
-                <span class="checkmark"></span>
+                <span className="checkmark"></span>
               </label>
             </div>
             <div className="answerDiv">
               <label className="checkboxLabel">
                 Pull in Answer B from API
                 <input type="checkbox" className="checkbox answerB" value="B" />
-                <span class="checkmark"></span>
+                <span className="checkmark"></span>
               </label>
             </div>
             <div className="answerDiv">
               <label className="checkboxLabel">
                 Pull in Answer C from API
                 <input type="checkbox" className="checkbox answerC" value="C" />
-                <span class="checkmark"></span>
+                <span className="checkmark"></span>
               </label>
             </div>
             <div className="answerDiv">
               <label className="checkboxLabel">
                 Pull in Answer D from API
                 <input type="checkbox" className="checkbox answerD" value="D" />
-                <span class="checkmark"></span>
+                <span className="checkmark"></span>
               </label>
             </div>
           </div>
