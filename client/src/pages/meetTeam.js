@@ -10,6 +10,19 @@ const MeetTeamPage = () => {
     <>
       <div class="bg-gray-100 min-h-screen px-10 MeetTeamPageContainer">
         <h1 className="meetTeamTitle">Meet our team...</h1>
+        <svg
+          width="350"
+          height="71"
+          viewBox="0 0 350 71"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg%22%3E"
+        >
+          <path
+            d="M1 68.5203C115.833 28.5203 346 -35.1797 348 30.0203"
+            stroke="#0EB4E8"
+            stroke-width="4"
+          />
+        </svg>
         <p>
           We hope you enjoyed our game. We created this game as our final
           project for the Georgia Tech Coding Boot Camp for which we all
