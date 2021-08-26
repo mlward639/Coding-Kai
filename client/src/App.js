@@ -8,7 +8,10 @@ import PausePage from "./pages/PausePage";
 import FightPage from "./pages/FightPage";
 import FightPageQuestion from "./pages/FightPageQuestion";
 import QuitPage from "./pages/QuitPage";
-import Canvas from './components/Canvas/Canvas'
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
+import MeetTeamPage from "./pages/meetTeam";
+import Canvas from "./components/Canvas/Canvas";
 
 //routing NOT working
 export default function App() {
@@ -18,6 +21,12 @@ export default function App() {
         <Switch>
           <Route exact path="/">
             <Homepage />
+          </Route>
+          <Route path="/login">
+            <LoginPage />
+          </Route>
+          <Route path="/signup">
+            <SignupPage />
           </Route>
           <Route path="/story">
             <Storypage />
@@ -34,6 +43,9 @@ export default function App() {
           <Route path="/quit">
             <QuitPage />
           </Route>
+          <Route path="/meet">
+            <MeetTeamPage />
+          </Route>
           <Route path="/game">
             <Canvas />
           </Route>
@@ -44,3 +56,15 @@ export default function App() {
 }
 
 // <div className="zone-container"><Player skin="m2" /></div>
+
+// ADD HERE
+{
+  /* <Switch>
+<Route exact path="/">
+  if logged in
+  <Homepage />
+  if !logged in
+  <LoginPage />
+</Route>
+ */
+}
