@@ -18,13 +18,13 @@ const FightPage = () => {
       <div className="fightPageContainer">
         <h1>FIGHT</h1>
         <div className="fightDiv2">
-          {/* <CharacterFight />
+          <CharacterFight />
           <QuestionFight />
-          <EnemyFight /> */}
+          <EnemyFight />
         </div>
         <div className="questionModalDiv">
           {/* <QuestionModalCorrect /> */}
-          <QuestionModalIncorrect />
+          {/* <QuestionModalIncorrect /> */}
         </div>
       </div>
     </>
