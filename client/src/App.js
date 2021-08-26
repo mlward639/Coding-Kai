@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Player from "./components/player";
+// import Player from "./components/player";
 import Homepage from "./pages/Homepage";
 import Storypage from "./pages/Storypage";
 import PausePage from "./pages/PausePage";
