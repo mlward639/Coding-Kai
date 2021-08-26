@@ -4,7 +4,7 @@ const router = require('express').Router();
 const { User } = require('../models/User');
 const userControllers = require("../../controllers/userControllers.js");
 
-
+// routes for user authentication
 router.route("/signup")
   .post(userControllers.createUser); 
 
@@ -19,8 +19,6 @@ router.route("/deleteUser")
 
 router.route("/getUsers")
   .get(userControllers.findUsers); 
-
-//how are we setting up logged in/out sessions? werent we doing sequelize with session before?
 module.exports = router;
 
 

@@ -21,7 +21,9 @@ const sess = {
   //   db: sequelize
   // })
 };
+// needed for session that is used in login route 
 app.use(session(sess));
+
 //  SET UP MIDDLEWARE
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
