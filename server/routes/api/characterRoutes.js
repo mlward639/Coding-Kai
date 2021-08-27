@@ -1,19 +1,21 @@
-const router = require("express").Router();
+const router = require('express').Router();
 const Character = require('../../models/Character');
 
 // Get all characters from db
 router.get('/', async (req, res) => {
-    try {
-        const characterData = await Character.find();
-        if (!characterData) {
-            res.status(404).json({ message: "No characters found! " });
-            return;
-        }
-
-        res.status(200).json(characterData);
-    } catch (err) {
-        res.status(400).json(err);
+  try {
+    console.log('testttt');
+    const characterData = await Character.find();
+    // console.log(characterData, '........');
+    if (!characterData) {
+      res.status(404).json({ message: 'No characters found! ' });
+      return;
     }
+    res.status(200).json(character);
+    // console.log(character, '*********');
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
 // Get a single character by ID

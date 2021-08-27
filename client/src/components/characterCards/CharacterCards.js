@@ -2,38 +2,61 @@ import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import TestImg from "../../images/test-character.png";
 
-const characters = [
+let characters = [
   //update with get request data from mongo db
-  {
-    id: uuidv4(),
-    name: "Test Character",
-    img: TestImg,
-    HP: 10,
-    attack: 1,
-    experience: 5,
-    level: 2,
-  },
-  {
-    id: uuidv4(),
-    name: "Test Character",
-    img: TestImg,
-    HP: 10,
-    attack: 1,
-    experience: 5,
-    level: 2,
-  },
-  {
-    id: uuidv4(),
-    name: "Test Character",
-    img: TestImg,
-    HP: 10,
-    attack: 1,
-    experience: 5,
-    level: 2,
-  },
+  // {
+  //   id: uuidv4(),
+  //   name: "Test Character",
+  //   img: TestImg,
+  //   HP: 10,
+  //   attack: 1,
+  //   experience: 5,
+  //   level: 2,
+  // },
+  // {
+  //   id: uuidv4(),
+  //   name: "Test Character",
+  //   img: TestImg,
+  //   HP: 10,
+  //   attack: 1,
+  //   experience: 5,
+  //   level: 2,
+  // },
+  // {
+  //   id: uuidv4(),
+  //   name: "Test Character",
+  //   img: TestImg,
+  //   HP: 10,
+  //   attack: 1,
+  //   experience: 5,
+  //   level: 2,
+  // },
 ];
 
+//update fetch once have route for all characters for one user
+// const characterHandler = async (event) => {
+//   const response = await fetch("/api/character", {
+//     method: "GET",
+//     headers: { "Content-Type": "application/json" },
+//   })
+//     .then((response) => response.json())
+//     .then((data) => {
+//       console.log("data", data);
+
+      // if (response.ok) {
+      //   console.log(response.json, "----");
+      //   characters = response.json();
+      //   .then(function (data) {
+      //     console.log(data);
+      //   });
+      // } else {
+      //   console.error("error");
+      // }
+    });
+};
+
 const CharacterCards = () => {
+  characterHandler();
   return characters.map((character) => (
     <>
       <div

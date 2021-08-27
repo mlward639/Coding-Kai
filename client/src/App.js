@@ -19,7 +19,7 @@ export default function App() {
     <Router>
       <div className="container">
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/api/character">
             <Homepage />
           </Route>
           <Route path="/login">

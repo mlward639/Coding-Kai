@@ -9,7 +9,6 @@ const username = "Test User"; //update with get request data from mongo db
 const Homepage = () => {
   // const { loading, data } = useQuery(QUERY_PROFILES);
   // const profiles = data?.profiles || [];
-
   return (
     <>
       <h1 className="welcomeHomepage">Welcome, {username}!</h1>
