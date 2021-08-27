@@ -34,29 +34,19 @@ let characters = [
 ];
 
 //update fetch once have route for all characters for one user
-// const characterHandler = async (event) => {
-//   const response = await fetch("/api/character", {
-//     method: "GET",
-//     headers: { "Content-Type": "application/json" },
-//   })
-//     .then((response) => response.json())
-//     .then((data) => {
-//       console.log("data", data);
-
-      // if (response.ok) {
-      //   console.log(response.json, "----");
-      //   characters = response.json();
-      //   .then(function (data) {
-      //     console.log(data);
-      //   });
-      // } else {
-      //   console.error("error");
-      // }
+const characterHandler = async (event) => {
+  const response = await fetch("/api/character", {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("data", data);
     });
 };
 
 const CharacterCards = () => {
-  characterHandler();
+  // characterHandler();
   return characters.map((character) => (
     <>
       <div
