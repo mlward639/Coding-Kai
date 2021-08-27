@@ -36,33 +36,37 @@ const Canvas = props => {
         2, 2, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3,
 
     ]
+
+
   const draw = ctx => {
     for(var y = 0; y < mapH; ++y)
 	{
 		for(var x = 0; x < mapW; ++x)
 		{
+
             switch(gameMap[((y*mapW)+x)])
 			{
 				case 1:
 					ctx.fillStyle = "#992b4f"
 					break;
-                case 2:
-                    ctx.fillStyle = "#076821";
-                    break;
-                case 6:
-					ctx.fillStyle = "#000000";
-					break;
-                case 3:
-                    ctx.fillStyle = "#1549d7";
-                    break;    
-                case 4:
-                    ctx.fillStyle = "#683407";
-                    break;
-                case 5:
+        case 2:
+          ctx.fillStyle = "#076821";
+          break;
+        case 3:
+          ctx.fillStyle = "#1549d7";
+          break;    
+        case 4:
+          ctx.fillStyle = "#683407";
+          break;
+        case 5:
 					ctx.fillStyle = "#77797d";
 					break;
-                default:
-					ctx.fillStyle = "#ed7e1e";
+        case 6:
+					ctx.fillStyle = "#000000";
+					break;
+        default:
+					ctx.fillStyle = "#ed7e1e"; 
+
 			}
 
 			ctx.fillRect( x*tileW, y*tileH, tileW, tileH);
@@ -75,6 +79,9 @@ const Canvas = props => {
     
     const canvas = canvasRef.current
     const context = canvas.getContext('2d')
+    
+   
+
     
     //Our draw come here
     draw(context)
