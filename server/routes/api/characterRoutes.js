@@ -32,4 +32,6 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+// Get character by user id
+
 module.exports = router;

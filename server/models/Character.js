@@ -25,6 +25,12 @@ const CharacterSchema = new Schema({
     trim: true,
     required: 'Name is Required',
   },
+  user_id: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+    },
+  ],
 });
 
 const Character = model('Character', CharacterSchema);
