@@ -39,7 +39,8 @@ export default function useWalk(maxSteps) {
       }
 
       function move(dir) {
-          if(position.y <= -304 && dir === "up" ){
+                  
+        if(position.y <= -304 && dir === "up" ){
               return
           }
           else if(position.y >= 304 && dir === "down" ){
@@ -52,7 +53,9 @@ export default function useWalk(maxSteps) {
             return
         }
           else{
+            console.log(position)
           setPosition((prev) => ({
+              
               x: prev.x + modifier[dir].x,
               y: prev.y + modifier[dir].y,
 

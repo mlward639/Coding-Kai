@@ -2,16 +2,18 @@
 import React, { useRef, useEffect } from 'react'
 import "./canvas.css"
 import Player from "../player"  
-const Canvas = props => {
+import Enemy from '../enemy/enemy'
 
+
+
+const Canvas = props => {
 
   const canvasRef = useRef(null)
   const tileW = 32;
     const tileH = 32;
     const mapW = 20;
     const mapH = 20;
-    // let img = new Image();
-    // img.src= '../../../public/sprites/skins/f2.png';
+   
 
     const gameMap = [
         1, 4, 4, 2, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 4, 4, 4, 4, 2, 2,
@@ -73,6 +75,8 @@ const Canvas = props => {
 		}
 	}
 	ctx.fillStyle = "#ff0000";
+
+  
   }
   
   useEffect(() => {
@@ -87,11 +91,28 @@ const Canvas = props => {
     draw(context)
   }, [draw])
   
+
+
+const indexes =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+const enemiesList = indexes.map(function(index){
+   return(<Enemy index={index} key={index} />)
+})
+
   return (
       <>
+  <div style={{display:'flex', flexDirection:'row', alignItems: 'center' }}>
   <div className="gameMap">
-      <canvas width='640' height='640' ref={canvasRef} {...props}/>
+            <canvas width='640' height='640' ref={canvasRef} {...props}/>
       <Player skin="m2"/>
+      {enemiesList}
+     
+  </div>
+  <div>null
+    {/* this is where the stats $ directions container will go */}<p style={{color:'white'}}>This is stuff</p>
+  </div>
+  </div>
+  <div>null
+    {/* This is where the quiz section can go */}<p style={{color:'white'}}>This is stuff</p>
   </div>
   
   </>
