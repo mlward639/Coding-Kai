@@ -5,7 +5,7 @@ export default function Sprite ({ image, data, position }) {
     const { y, x, h, w } = data;
 
     return <div style={{
-        position: "absolute",
+        position: "relative",
         top: position.y,
         left: position.x,
         height: `${h}px`,

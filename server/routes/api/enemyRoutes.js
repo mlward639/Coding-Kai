@@ -14,6 +14,11 @@ router.get('/', async (req, res) => {
   } catch (err) {
     res.status(400).json(err);
   }
+
+  // res.status(200).json(enemyData);
+  // } catch (err) {
+  //   res.status(400).json(err);
+  // }
 });
 
 // Get enemy by id

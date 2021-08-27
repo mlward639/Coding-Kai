@@ -17,11 +17,10 @@ const UserSchema = new Schema({
   },
   character_id: [
     {
-      // type: Number,
+      // type: Number
       // TODO:
       type: Schema.Types.ObjectId,
       ref: 'Character',
-      //HOW ARE WE ADDING CHARACTER ID TO THE USER'S MODAL WHEN THEY CREATE NEW CHARACTER?
     },
   ],
 });
