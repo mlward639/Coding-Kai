@@ -10,15 +10,22 @@ db.once('open', async () => {
     await Questions.deleteMany({});
     await Questions.create(questionSeeds);
     console.log('Questions seeded!');
-    await Character.deleteMany({});
-    const characters = await Character.insertMany(characterData);
-    console.log('Characters seeded!');
-    await Enemy.deleteMany({});
-    const enemies = await Enemy.insertMany(enemyData);
-    console.log('Enemies seeded!');
+
     await User.deleteMany({});
     const users = await User.insertMany(userData);
     console.log('Users seeded!');
+
+    await Character.deleteMany({});
+    characterData.map((character) => {
+      character.user_id = users[0]._id; // Maps each character in characterData to have a user_id field with the id of the first seeded user
+    });
+    await Character.create(characterData);
+    console.log('Characters seeded!');
+
+    await Enemy.deleteMany({});
+    const enemies = await Enemy.insertMany(enemyData);
+    console.log('Enemies seeded!');
+
     console.log('all done!');
     process.exit(0);
   } catch (err) {
