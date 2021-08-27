@@ -2,11 +2,11 @@
     {
         "username": "user1",
         "password": "p@ssword123",
-        "character_id": 0
+        "character_id": "612857484f7239745c42623f"
     },
     {
         "username": "user2",
         "password": "password123",
-        "character_id": 1
+        "character_id": "612857484f7239745c426240"
     }
   ]
