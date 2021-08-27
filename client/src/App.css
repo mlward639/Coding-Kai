@@ -84,6 +84,7 @@ body {
   float: right;
   width: 68%;
   padding-left: 6px;
+  color: var(--darkGray);
 }
 
 .submitBtnDiv {
