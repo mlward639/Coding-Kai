@@ -16,6 +16,14 @@ const UserSchema = new Schema({
     required: 'Password is Required',
     validate: [({ length }) => length >= 6, 'Password should be longer.'],
   },
+  character_id: [
+    {
+      // type: Number 
+      // TODO:
+      type: Schema.Types.ObjectId,
+      ref: 'Character',
+    },
+  ],
 });
 
 // NEED TO ADD validPassword() hook into model?
