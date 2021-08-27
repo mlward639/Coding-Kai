@@ -12,7 +12,7 @@ const models = require('./models');
 // CB: NEED TO ACCESS MONGODB?
 // const monogojs = require("monogojs");
 // ADD IF NEEDED: const helpers = require('./utils/helpers');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3003;
 const app = express();
 const sess = {
   secret: 'Super secret secret',
@@ -44,10 +44,6 @@ mongoose.connect(
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
-
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../client/build/index.html'));
-// });
 
 // routes
 app.use(routes);
