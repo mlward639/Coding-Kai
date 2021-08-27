@@ -13,11 +13,14 @@ import SignupPage from "./pages/SignupPage";
 import MeetTeamPage from "./pages/meetTeam";
 import Canvas from "./components/Canvas/Canvas";
 
+
+
+
 //routing NOT working
 export default function App() {
   return (
     <Router>
-      <div className="container">
+      <div className="container" style={{display:'flex', flexDirection:'column', alignItems:"center", justifyContent: "center", marginLeft:"15vw"}}>
         <Switch>
           <Route exact path="/">
             <Homepage />
