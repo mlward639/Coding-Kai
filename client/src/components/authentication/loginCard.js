@@ -1,26 +1,74 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Auth from "../../utils/auth";
+
 // import Login from "../components/authentication/login";
 // import Signup from "../components/authentication/signup";
+
+const login = (user) => {
+  //fetch...
+  return fetch("/userLogin", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(user),
+  });
+};
 
 const LoginCard = () => {
   // const { loading, data } = useQuery(QUERY_PROFILES);
   // const profiles = data?.profiles || [];
+  const [formState, setFormState] = useState({ username: "", password: "" });
+  //const [login, { error, data }] = useMutation(LOGIN_USER);
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+    try {
+      const res = await login({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
+    }
+
+    // clear form values
+    setFormState({
+      username: "",
+      password: "",
+    });
+  };
   return (
     <>
       <div className="loginContainer">
         <div className="loginCard max-h-screen relative  bg-white shadow-lg w-60 flex items-center  flex-col">
           <div className="flex items-center flex-col justify-center">
-            <form action="#" className="w-full md:w-1/2  p-6 loginForm">
+            <form
+              onSubmit={handleFormSubmit}
+              action="#"
+              className="w-full md:w-1/2  p-6 loginForm"
+            >
               <h2 className="text-2xl pb-3 font-semibold loginTitle">LOGIN</h2>
               <div className="usernameDiv">
                 <label className="usernameLoginLabel">
                   Username:
                   <input
+                    name="username"
                     type="text"
                     className=" usernameLoginInput"
                     placeholder="Sam"
+                    // value={formState.username}
+                    // onChange={handleChange}
                   />
                 </label>
               </div>
@@ -28,9 +76,12 @@ const LoginCard = () => {
                 <label className="passwordLoginLabel">
                   Password:
                   <input
-                    type="text"
+                    name="password"
+                    type="password"
                     className="passwordLoginInput"
-                    placeholder="password"
+                    placeholder="********"
+                    // value={formState.password}
+                    // onChange={handleChange}
                   />
                 </label>
               </div>
@@ -54,3 +105,5 @@ const LoginCard = () => {
 };
 
 export default LoginCard;
+
+//add error message
