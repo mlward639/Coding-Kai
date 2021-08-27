@@ -20,7 +20,7 @@ const index = Math.floor(Math.random() * 57); //change 57 to seeds array.length
 
 router.get('/', async (req, res) => {
   try {
-    const questionData = await Questions.findAll({});
+    const questionData = await Questions.find({});
     console.log('here', questionData);
     if (!questionData) {
       res.status(404).json({ message: 'No question found!' });
