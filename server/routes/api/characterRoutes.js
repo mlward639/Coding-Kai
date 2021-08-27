@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const Character = require('../../models/Character');
+const ObjectId = require('mongodb').ObjectId;
 
 // Get all characters from db
 router.get('/', async (req, res) => {
@@ -33,10 +34,12 @@ router.get('/:id', async (req, res) => {
 });
 
 // Get character by user id
-router.get('/:userid', async (req, res) => {
+router.get('/user/:userid', async (req, res) => {
+  // console.log(req.params.userid);
   try {
-    const characterData = await Character.find({ user_id: req.params.userid }); // Find all characters with userid in params
-    if (!characterData) {
+    const characterData = await Character.find({ "user_id": ObjectId(req.params.userid) }); // Find all characters with userid in params
+    // console.log(characterData);
+    if (!characterData.length) {
       res.status(404).json({ message: 'No characters found for this user!' });
     }
 
