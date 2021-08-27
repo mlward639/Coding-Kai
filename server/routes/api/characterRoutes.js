@@ -33,5 +33,17 @@ router.get('/:id', async (req, res) => {
 });
 
 // Get character by user id
+router.get('/:userid', async (req, res) => {
+  try {
+    const characterData = await Character.find({ user_id: req.params.userid }); // Find all characters with userid in params
+    if (!characterData) {
+      res.status(404).json({ message: 'No characters found for this user!' });
+    }
+
+    res.status(200).json(characterData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+})
 
 module.exports = router;
