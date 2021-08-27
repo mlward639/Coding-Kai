@@ -2,17 +2,17 @@ const router = require('express').Router();
 const Character = require('../../models/Character');
 
 // Get all characters from db
-router.get('/', async (req, res) => {
+router.get('/all', async (req, res) => {
   try {
     console.log('testttt');
     const characterData = await Character.find();
-    // console.log(characterData, '........');
+    console.log(characterData, '........');
     if (!characterData) {
       res.status(404).json({ message: 'No characters found! ' });
       return;
     }
-    res.status(200).json(character);
-    // console.log(character, '*********');
+    res.status(200).json(characterData);
+    console.log(characterData, '*********');
   } catch (err) {
     res.status(400).json(err);
   }
@@ -46,6 +46,6 @@ router.get('/:userid', async (req, res) => {
   } catch (err) {
     res.status(400).json(err);
   }
-})
+});
 
 module.exports = router;

@@ -1,6 +1,14 @@
 import React from "react";
+import axios from "axios";
 
 const QuestionFight = () => {
+  axios.get("/api/question/").then((response) => {
+    console.log(response.data);
+    console.log(response.status);
+    console.log(response.statusText);
+    console.log(response.headers);
+    console.log(response.config);
+  });
   return (
     <>
       <form action="#" className="w-full md:w-1/2 border p-6 questionForm">

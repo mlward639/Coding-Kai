@@ -1,6 +1,7 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import TestImg from "../../images/test-character.png";
+import axios from "axios";
 
 let characters = [
   //update with get request data from mongo db
@@ -34,19 +35,26 @@ let characters = [
 ];
 
 //update fetch once have route for all characters for one user
-const characterHandler = async (event) => {
-  const response = await fetch("/api/character", {
-    method: "GET",
-    headers: { "Content-Type": "application/json" },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("data", data);
-    });
-};
+// const characterHandler = async (event) => {
+//   const response = await fetch("/api/character", {
+//     method: "GET",
+//     headers: { "Content-Type": "application/json" },
+//   })
+//     .then((response) => response.json())
+//     .then((data) => {
+//       console.log("data", data);
+//     });
+// };
 
 const CharacterCards = () => {
   // characterHandler();
+  axios.get("/api/character/all").then((response) => {
+    console.log(response.data);
+    console.log(response.status);
+    console.log(response.statusText);
+    console.log(response.headers);
+    console.log(response.config);
+  });
   return characters.map((character) => (
     <>
       <div
