@@ -25,10 +25,10 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const enemyData = await Enemy.findOne({
-      _id: req.params.id,
+      id: req.params.id,
     });
     if (!enemyData) {
-      res.status(404).json({ message: 'No enemy with this name found!' });
+      res.status(404).json({ message: 'No enemy with this id found!' });
     }
 
     res.status(200).json(enemyData);

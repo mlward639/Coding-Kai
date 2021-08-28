@@ -457,7 +457,10 @@ body {
 
 .characterFightName,
 .enemyFightName {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  margin-top: 2px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .healthBar,
@@ -465,6 +468,32 @@ body {
   border: 2px solid green;
   background-color: green;
   margin-top: 10px;
+}
+
+.enemyStats,
+.characterStats {
+  /* border: 2px solid green; */
+  display: flex;
+  margin-top: 10px;
+}
+
+.enemyHP,
+.characterHP {
+  border: 2px solid var(--red);
+  background-color: var(--red);
+  width: 44%;
+  text-align: center;
+  margin-right: 4%;
+  margin-left: 4%;
+}
+
+.enemyAttack,
+.characterAttack {
+  border: 2px solid var(--red);
+  background-color: var(--red);
+  width: 44%;
+  margin-right: 4%;
+  text-align: center;
 }
 
 .startBtnDiv {
