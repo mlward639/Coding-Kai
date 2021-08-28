@@ -1,7 +1,7 @@
 {
-  "name": "Coding-Kai-app",
+  "name": "coding-kai-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "<img src='https://img.shields.io/badge/License-MIT-yellow.svg'>",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
@@ -23,5 +23,13 @@
     "@craco/craco": "^6.2.0",
     "graphql": "^15.5.1",
     "jsonwebtoken": "^8.5.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlward639/Coding-Kai.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mlward639/Coding-Kai/issues"
+  },
+  "homepage": "https://github.com/mlward639/Coding-Kai#readme"
 }

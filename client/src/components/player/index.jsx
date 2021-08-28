@@ -15,9 +15,20 @@ export default function Player ({ skin }) {
 
       useKeyPress((e) => {
            console.log(e.key)
+          if (e.key=== "w" || e.key==="a" || e.key==="s" || e.key==="d" || e.key==="ArrowUp" || e.key==="ArrowDown" || e.key==="ArrowLeft" || e.key==="ArrowRight" || e.key==="Enter"){
           walk(e.key.replace("Arrow", "").toLowerCase());
-          
+          }
+          // else if (e.key= 'Enter' && position === {x: -544, y:-144}){
+          //   console.log("This will be the encounter enemy function")
+          // }
+          else {
+            console.log(position)
+
+            return
+          }
+
           e.preventDefault();
+
       })
     return <Actor sprite={`/sprites/skins/${skin}.png`} data={data} step={step} dir={dir} position={position} />
 }
