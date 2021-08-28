@@ -1,52 +1,101 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+let questionData;
+
 const QuestionFight = () => {
-  axios.get("/api/question/").then((response) => {
-    console.log(response.data);
-    console.log(response.status);
-    console.log(response.statusText);
-    console.log(response.headers);
-    console.log(response.config);
-  });
+  const [currentQuestion, setCurrentQuestion] = useState("");
+  // console.log("tttt", currentQuestion);
+  const randomNumber = Math.floor(Math.random() * 57); //change 57 to seeds array.length
+  // console.log(randomNumber);
+  // let id = randomNumber;
+  // console.log(id);
+  useEffect(() => {
+    let id = randomNumber;
+    console.log("&&&&&&", id);
+    axios.get(`/api/question/${id}`).then((response) => {
+      console.log("1", response.data);
+      setCurrentQuestion(response.data);
+      // console.log(questionData.question, "tttt");
+      // return questionData;
+    });
+    // .then(console.log("$$$$$$", setCurrentQuestion));
+  }, []);
+  console.log("$$$$$$$$", currentQuestion);
+  console.log("^^^^", currentQuestion.answers.answer_a);
+
   return (
     <>
       <form action="#" className="w-full md:w-1/2 border p-6 questionForm">
         <h2 className="text-2xl pb-3 font-semibold">
           Attack your enemy by answering correctly
         </h2>
-        <p className="question">API question here</p>
+        <p className="question">{currentQuestion.question}</p>
         <div>
           <div className="flex flex-col mb-3 answerChoices">
             <div className="answerDiv">
               <label className="checkboxLabel">
-                Pull in Answer A from API
+                {currentQuestion.answers.answer_a}
                 <input
                   type="checkbox"
                   className=" checkbox answerA"
-                  value="A"
+                  value="answer_a"
                 />
                 <span className="checkmark"></span>
               </label>
             </div>
             <div className="answerDiv">
               <label className="checkboxLabel">
-                Pull in Answer B from API
-                <input type="checkbox" className="checkbox answerB" value="B" />
+                {currentQuestion.answers.answer_b}
+                <input
+                  type="checkbox"
+                  className="checkbox answerB"
+                  value="answer_b"
+                />
                 <span className="checkmark"></span>
               </label>
             </div>
             <div className="answerDiv">
               <label className="checkboxLabel">
-                Pull in Answer C from API
-                <input type="checkbox" className="checkbox answerC" value="C" />
+                {currentQuestion.answers.answer_c}
+                <input
+                  type="checkbox"
+                  className="checkbox answerC"
+                  value="answer_c"
+                />
                 <span className="checkmark"></span>
               </label>
             </div>
             <div className="answerDiv">
               <label className="checkboxLabel">
-                Pull in Answer D from API
-                <input type="checkbox" className="checkbox answerD" value="D" />
+                {currentQuestion.answers.answer_d}
+                <input
+                  type="checkbox"
+                  className="checkbox answerD"
+                  value="answer_d"
+                />
+                <span className="checkmark"></span>
+              </label>
+            </div>
+            <div className="answerDiv">
+              <label className="checkboxLabel">
+                {currentQuestion.answers.answer_e}
+                <input
+                  type="checkbox"
+                  className="checkbox answere"
+                  value="answer_e"
+                />
+                <span className="checkmark"></span>
+              </label>
+            </div>
+            <div className="answerDiv">
+              <label className="checkboxLabel">
+                {currentQuestion.answers.answer_f}
+                <input
+                  type="checkbox"
+                  className="checkbox answerf"
+                  value="answer_b"
+                />
                 <span className="checkmark"></span>
               </label>
             </div>
@@ -66,3 +115,5 @@ const QuestionFight = () => {
 };
 
 export default QuestionFight;
+
+//need to add something to answer choices so if value is null, it does not create a div... could this be a map fxn... idk

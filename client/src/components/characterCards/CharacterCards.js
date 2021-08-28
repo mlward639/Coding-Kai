@@ -48,13 +48,11 @@ let characters = [
 
 const CharacterCards = () => {
   // characterHandler();
-  axios.get("/api/character/all").then((response) => {
-    console.log(response.data);
-    console.log(response.status);
-    console.log(response.statusText);
-    console.log(response.headers);
-    console.log(response.config);
+  let character;
+  axios.get("/api/character/all").then((character) => {
+    console.log("1", character.data);
   });
+  console.log(character, "5555");
   return characters.map((character) => (
     <>
       <div
