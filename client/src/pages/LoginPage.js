@@ -19,5 +19,5 @@ const LoginPage = () => {
 
 export default LoginPage;
 
-//DO WE WANT A SELECT CHARACTER PAGE (so when they click start new game, it takes them to select character page)?? Or just randomly assign them a character??
+// DO WE WANT A SELECT CHARACTER PAGE (so when they click start new game, it takes them to select character page)?? Or just randomly assign them a character??
 // I think they should get m2.png a their character. 

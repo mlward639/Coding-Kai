@@ -4,8 +4,6 @@ import "./canvas.css"
 import Player from "../player"  
 import Enemy from '../enemy/enemy'
 
-
-
 const Canvas = props => {
 
   const canvasRef = useRef(null)
@@ -112,6 +110,7 @@ const enemiesList = indexes.map(function(index){
   </div>
   </div>
   <div>null
+         
     {/* This is where the quiz section can go */}<p style={{color:'white'}}>This is stuff</p>
   </div>
   
