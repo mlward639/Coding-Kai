@@ -45,7 +45,7 @@ export default function useWalk(maxSteps) {
       }
 
       function move(dir) {
-                  
+        // map boundaries
         if(position.y <= -304 && dir === "up" || position.y <= -304 && dir === "w" ){
               return
           }
@@ -58,6 +58,7 @@ export default function useWalk(maxSteps) {
         else if(position.x >= -32 && dir === "right" || position.x >= -32 && dir === "d" ){
             return
         }
+        // brown boundaries
         else if ((position.x === -640 && position.y ===-304 ) && dir ==="right"){
             return
         }
@@ -136,10 +137,364 @@ export default function useWalk(maxSteps) {
         else if ((position.x === -512 && position.y ===-80 ) && dir ==="up"){
           return
         }
+        else if ((position.x === -608 && position.y ===-16 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -608 && position.y ===16 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -576 && position.y === 48 ) && dir ==="up"){
+          return
+        }
+        else if ((position.x === -544 && position.y === 48 ) && dir ==="up"){
+          return
+        }
+        else if ((position.x === -512 && position.y ===48 ) && dir ==="up"){
+          return
+        }
+        else if ((position.x === -480 && position.y ===-16 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -480 && position.y ===16 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -352 && position.y ===-240 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -352 && position.y ===-208 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -352 && position.y ===-176 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -352 && position.y ===-144 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -352 && position.y ===-112 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -320 && position.y ===-80 ) && dir ==="up"){
+          return
+        }
+        else if ((position.x === -288 && position.y ===-240 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -288 && position.y ===-208 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -288 && position.y ===-176 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -288 && position.y ===-144 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -288 && position.y ===-112 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -320 && position.y ===-272 ) && dir ==="down"){
+          return
+        }
+        else if ((position.x === -256 && position.y ===-176 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -256 && position.y ===-144 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -256 && position.y ===-112 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -224 && position.y ===-80 ) && dir ==="up"){
+          return
+        }
+        else if ((position.x === -192 && position.y ===-80 ) && dir ==="up"){
+          return
+        }
+        else if ((position.x === -160 && position.y ===-176 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -160 && position.y ===-144 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -160 && position.y ===-112 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -224 && position.y ===-208 ) && dir ==="down"){
+          return
+        }
+        else if ((position.x === -192 && position.y ===-208 ) && dir ==="down"){
+          return
+        }
+        else if ((position.x === -224 && position.y ===-304 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -224 && position.y ===-272 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -64 && position.y ===-304 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -64 && position.y ===-272 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -192 && position.y ===-240 ) && dir ==="up"){
+          return
+        }
+        else if ((position.x === -160 && position.y ===-240 ) && dir ==="up"){
+          return
+        }
+        else if ((position.x === -128 && position.y ===-240 ) && dir ==="up"){
+          return
+        }
+        else if ((position.x === -96 && position.y ===-240 ) && dir ==="up"||(position.x === -96 && position.y ===-240 ) && dir ==="down"){
+          return
+        }
+        else if ((position.x === -64 && position.y ===-240 ) && dir ==="down"){
+          return
+        }
+        else if ((position.x === -32 && position.y ===-208 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -32 && position.y ===-176 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -32 && position.y ===-144 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -64 && position.y ===-112 ) && dir ==="up"){
+          return
+        }
+        else if ((position.x === -96 && position.y ===-112 ) && dir ==="up"){
+          return
+        }
+        else if ((position.x === -128 && position.y ===-208 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -128 && position.y ===-176 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -128 && position.y ===-144 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -160 && position.y ===-80 ) && dir ==="down"){
+          return
+        }
+        else if ((position.x === -192 && position.y ===-80 ) && dir ==="down"){
+          return
+        }
+        else if ((position.x === -128 && position.y ===-48 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -128 && position.y ===-16 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -128 && position.y ===16 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -128 && position.y ===48 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -128 && position.y ===80 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -128 && position.y ===112 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -128 && position.y ===144 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -128 && position.y ===176 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -192 && position.y ===208 ) && dir ==="up"){
+          return
+        }
+        else if ((position.x === -160 && position.y ===208 ) && dir ==="up"){
+          return
+        }
+        else if ((position.x === -224 && position.y ===-48 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -224 && position.y ===-16 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -224 && position.y ===16 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -224 && position.y ===48 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -224 && position.y ===80 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -224 && position.y ===112 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -224 && position.y ===144 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -224 && position.y ===176 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -416 && position.y ===16 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -416 && position.y ===48 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -416 && position.y ===80 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -320 && position.y ===16 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -320 && position.y ===48 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -320 && position.y ===80 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -384 && position.y ===112 ) && dir ==="up"){
+          return
+        }
+        else if ((position.x === -352 && position.y ===112 ) && dir ==="up"){
+          return
+        }
+        else if ((position.x === -384 && position.y ===-16 ) && dir ==="down"){
+          return
+        }
+        else if ((position.x === -352 && position.y ===-16 ) && dir ==="down"){
+          return
+        }
+        else if ((position.x === -416 && position.y ===176 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -416 && position.y ===208 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -416 && position.y ===240 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -320 && position.y ===176 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -320 && position.y ===208 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -320 && position.y ===240 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -384 && position.y ===272 ) && dir ==="up"){
+          return
+        }
+        else if ((position.x === -352 && position.y ===272 ) && dir ==="up"){
+          return
+        }
+        else if ((position.x === -384 && position.y ===144 ) && dir ==="down"){
+          return
+        }
+        else if ((position.x === -352 && position.y ===144 ) && dir ==="down"){
+          return
+        }
+        else if ((position.x === -544 && position.y ===176 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -544 && position.y ===208 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -544 && position.y ===240 ) && dir ==="right"){
+          return
+        }
+        else if ((position.x === -448 && position.y ===176 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -448 && position.y ===208 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -448 && position.y ===240 ) && dir ==="left"){
+          return
+        }
+        else if ((position.x === -512 && position.y ===272 ) && dir ==="up"){
+          return
+        }
+        else if ((position.x === -480 && position.y ===272 ) && dir ==="up"){
+          return
+        }
+        else if ((position.x === -512 && position.y ===144 ) && dir ==="down"){
+          return
+        }
+        else if ((position.x === -480 && position.y ===144 ) && dir ==="down"){
+          return
+        }
+        // enemy interaction locations with enter key
         else if ((position.x === -544 && position.y ===-144 ) && dir ==="enter"){
           checkTouching()
           return
         }
+        else if ((position.x === -544 && position.y ===-48 ) && dir ==="enter"){
+          checkTouching()
+          return
+        }
+        else if ((position.x === -544 && position.y ===-144 ) && dir ==="enter"){
+          checkTouching()
+          return
+        }
+        else if ((position.x === -384 && position.y ===-208 ) && dir ==="enter"){
+          checkTouching()
+          return
+        }
+        else if ((position.x === -352 && position.y ===-176 ) && dir ==="enter"){
+          checkTouching()
+          return
+        }
+        else if ((position.x === -416 && position.y ===48 ) && dir ==="enter"){
+          checkTouching()
+          return
+        }
+        else if ((position.x === -448 && position.y ===208 ) && dir ==="enter"){
+          checkTouching()
+          return
+        }
+        else if ((position.x === -416 && position.y ===208 ) && dir ==="enter"){
+          checkTouching()
+          return
+        }
+        else if ((position.x === -128 && position.y ===144 ) && dir ==="enter"){
+          checkTouching()
+          return
+        }
+        else if ((position.x === -128 && position.y ===112 ) && dir ==="enter"){
+          checkTouching()
+          return
+        }
+        else if ((position.x === -224 && position.y ===48 ) && dir ==="enter"){
+          checkTouching()
+          return
+        }
+        else if ((position.x === -224 && position.y ===-16 ) && dir ==="enter"){
+          checkTouching()
+          return
+        }
+        else if ((position.x === -160 && position.y ===-144 ) && dir ==="enter"){
+          checkTouching()
+          return
+        }
+        else if ((position.x === -128 && position.y ===-176 ) && dir ==="enter"){
+          checkTouching()
+          return
+        }
+        else if ((position.x === -128 && position.y ===-240 ) && dir ==="enter"){
+          checkTouching()
+          return
+        }
+        else if ((position.x === -160 && position.y ===-240 ) && dir ==="enter"){
+          checkTouching()
+          return
+        }
+        else if ((position.x === -288 && position.y ===-176 ) && dir ==="enter"){
+          checkTouching()
+          return
+        }
+        // updates the position of whatever is using useWalk (in our case player)
           else{
             console.log(position)
           setPosition((prev) => ({
