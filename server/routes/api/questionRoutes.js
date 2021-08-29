@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const Questions = require('../../models/Questions');
 
-const index = Math.floor(Math.random() * 57); //change 57 to seeds array.length
+const index = Math.floor(Math.random() * 56); //change 57 to seeds array.length
 
 router.get('/:id', async (req, res) => {
   try {

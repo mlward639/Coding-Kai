@@ -118,7 +118,7 @@ const QuestionFight = () => {
   // const [correctAnswer, setCorrectAnswer] = useState(""); // need to set the correct_answer from axios call to correct answer*******************
 
   // console.log("tttt", currentQuestion);
-  const randomNumber = Math.floor(Math.random() * 57); //change 57 to seeds array.length
+  const randomNumber = Math.floor(Math.random() * 56); //change 57 to seeds array.length
   // console.log(randomNumber);
   // let id = randomNumber;
   // console.log(id);

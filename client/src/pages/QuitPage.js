@@ -7,7 +7,7 @@ import StatsCards from "../components/stats/statsCards";
 const QuitPage = () => {
   // const { loading, data } = useQuery(QUERY_PROFILES);
   // const profiles = data?.profiles || [];
-
+  localStorage.removeItem("character_id");
   return (
     <>
       <div className="QuitGameDiv">
