@@ -185,7 +185,7 @@ const QuestionFight = () => {
             </div>
             <div className="answerDiv">
               <label className="radioLabel">
-                {fakeQuestion.answers.answer_b}
+                {currentQuestion.answers.answer_b}
                 <input
                   type="radio"
                   className="radio answerB"
@@ -196,7 +196,7 @@ const QuestionFight = () => {
             </div>
             <div className="answerDiv">
               <label className="radioLabel">
-                {fakeQuestion.answers.answer_c}
+                {currentQuestion.answers.answer_c}
                 <input
                   type="radio"
                   className="radio answerC"
@@ -207,7 +207,7 @@ const QuestionFight = () => {
             </div>
             <div className="answerDiv">
               <label className="radioLabel">
-                {fakeQuestion.answers.answer_d}
+                {currentQuestion.answers.answer_d}
                 <input
                   type="radio"
                   className="radio answerD"
