@@ -24,9 +24,7 @@ const CharacterFight = () => {
     axios.get(`/api/character/${_id}`).then((response) => {
       console.log("1111111", response.data);
       setCurrentCharacter(response.data);
-      console.log("222222", currentCharacter.name); //this gives an array of objects. when i try to access data from the array by doing currentEnemy[0].name, it returns undefined.... *** !!! get help saturday
-      // console.log(questionData.question, "tttt");
-      // return questionData;
+      console.log("222222", currentCharacter.name);
     });
     // .then(console.log("$$$$$$", setCurrentQuestion));
   }, []);

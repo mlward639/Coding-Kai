@@ -790,3 +790,7 @@ input[type="checkbox"] {
   background-color: white;
 }
 /*ADD MEDIA QUERIES for team page*/
+
+.test {
+  color: white;
+}

@@ -33,7 +33,7 @@ const EnemyFight = () => {
     //   let id = currentEnemies[index]._id;
     //   console.log("&&&&&&id", id);
     // });
-    // //this gives an array of objects. when i try to access data from the array by doing currentEnemy[0].name, it returns undefined.... *** !!! get help Saturday
+    // //this gives an array of objects. when i try to access data from the array by doing currentEnemy[0].name, it returns undefined.... ***
     // axios.get(`/api/enemy/${id}`).then((response) => {
     //   console.log("enemies resp.data", response.data);
     //   setCurrentEnemy(response.data);
