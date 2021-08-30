@@ -59,15 +59,23 @@ router.get('/user/:userid', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
   try {
-    const characterData = await Character.findOneAndUpdate(
-      { _id: req.params.id },
-      req.body,
-    );
+    const characterData = await Character.findOne({ _id: req.params.id });
+
     if (!characterData) {
       res.status(404).json({ message: 'No character with this ID found!' });
     }
 
-    res.status(200).json({ message: 'Character updated.' });
+    const updatedData = characterData;
+
+    updatedData.hitPoints += req.body.subtractedPoints;
+    updatedData.experience += req.body.addedExperience;
+
+    await Character.findOneAndUpdate(
+      { _id: req.params.id },
+      updatedData,
+    );
+
+    res.status(200).json({ message: 'Character updated:', updatedData });
   } catch (err) {
     res.status(400).json(err);
   }
