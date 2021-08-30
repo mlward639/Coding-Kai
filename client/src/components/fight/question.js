@@ -127,7 +127,7 @@ const QuestionFight = () => {
         changeExperience: 10, //+ VALUE OF ENEMY.ATTACK. NEED FUNCTION ON BACK END ADDING THIS VALUE TO THE CURRENT VALUE
       })
       .then((response) => {
-        console.log(response.data);
+        console.log(response.data, "look here");
       });
     // const res2 = await axios
     //   .put("NEED ENEMY PUT ROUTE", {
@@ -138,7 +138,7 @@ const QuestionFight = () => {
     //   });
     console.log("pre link");
     // history.push("/correct");
-    return <Link to="/correct"></Link>;
+    // return <Link to="/correct"></Link>;
     // return <Redirect to="/correct"></Redirect>;
   };
 
@@ -152,7 +152,7 @@ const QuestionFight = () => {
         changeHitPoints: -10, //- VALUE OF ENEMY.ATTACK. NEED FUNCTION ON BACK END ADDING THIS VALUE TO THE CURRENT VALUE
       })
       .then((response) => {
-        console.log(response.data);
+        console.log(response.data, "look here");
       });
     // const res2 = await axios
     //   .put("NEED ENEMY PUT ROUTE", {
@@ -162,7 +162,7 @@ const QuestionFight = () => {
     //     console.log(response.data);
     //   });
     console.log("pre link");
-    history.push("/wrong");
+    // history.push("/wrong");
 
     // return <Redirect to="/wrong"></Redirect>;
   };
@@ -252,13 +252,15 @@ const QuestionFight = () => {
             </div> */}
           </div>
           <div className="w-full pt-3 submitBtnDiv">
-            <button
-              type="submit"
-              className="w-full px-4 py-2 transition duration-50 focus:outline-none font-semibold hover:text-white text-xl cursor-pointer submitBtn"
-              onClick={checkingAnswers}
-            >
-              Submit
-            </button>
+            <Link to="/game">
+              <button
+                type="submit"
+                className="w-full px-4 py-2 transition duration-50 focus:outline-none font-semibold hover:text-white text-xl cursor-pointer submitBtn"
+                onClick={checkingAnswers}
+              >
+                Submit
+              </button>
+            </Link>
           </div>
         </div>
       </form>
