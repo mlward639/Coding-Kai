@@ -58,14 +58,18 @@ const CharacterCards = () => {
   console.log("still working");
   // characters = []; ***empty page if uncomment. then delete again and it correctly loads data. otherwise it wont load data  ask saturday!!!!!
   useEffect(() => {
+    let userid = ""; //need to dynamically update this based on logged in user ***
     console.log("use effect ran");
-    let userid = "612c8363094d0e5d58d38c93"; //need to dynamically update this based on logged in user ***
-    axios.get(`/api/character/user/${userid}`).then((response) => {
-      console.log("1", response.data);
-      const test = response.data;
-      setGetCharacters(test);
-      console.log("2", test);
-      console.log("22", GetCharacters);
+    axios.get(`/getUsers`).then((response) => {
+      userid = response.data[0]._id;
+      
+      axios.get(`/api/character/user/${userid}`).then((response) => {
+        console.log("1", response.data);
+        const test = response.data;
+        setGetCharacters(test);
+        console.log("2", test);
+        console.log("22", GetCharacters);
+      });
     });
   }, []);
   // characters = JSON.stringify(characters);
