@@ -18,7 +18,7 @@ export default function Player ({ skin }) {
           if (e.key=== "w" || e.key==="a" || e.key==="s" || e.key==="d" || e.key==="ArrowUp" || e.key==="ArrowDown" || e.key==="ArrowLeft" || e.key==="ArrowRight" || e.key==="Enter"){
           walk(e.key.replace("Arrow", "").toLowerCase());
           }
-          // else if (e.key= 'Enter' && position === {x: -544, y:-144}){
+          // else if (e.key= 'Enter' && (position.x=== -544 && position.y===-144)){
           //   console.log("This will be the encounter enemy function")
           // }
           else {

@@ -20,7 +20,7 @@ import Canvas from "./components/Canvas/Canvas";
 export default function App() {
   return (
     <Router>
-      <div className="container" style={{display:'flex', flexDirection:'column', alignItems:"center", justifyContent: "center", marginLeft:"15vw"}}>
+      <div className="container" >
         <Switch>
           <Route exact path="/">
             <Homepage />

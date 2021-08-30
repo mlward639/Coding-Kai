@@ -1,9 +1,22 @@
 import { useState } from "react";
 
-export default function useWalk(maxSteps) {
+export default function useWalk(maxSteps, props) {
+    
+    
+  
+    
     const [position, setPosition] = useState({x: -640, y: -304});
     const [dir, setDir] = useState(0);
     const[step, setStep] =useState(0);
+
+    // const coordinates = localStorage.getItem('coordinates');
+
+    // if(coordinates){
+    //   setPosition(coordinates);
+    // }
+    // else{
+    //   setPosition({x: -640, y: -304});
+    // };
 
     const directions ={
         down: 0,
@@ -29,9 +42,13 @@ export default function useWalk(maxSteps) {
         w: { x: 0, y: -stepSize }
     };
       // This function will become the enemy encounter function
+
       function checkTouching(){
         console.log("This is checking")
-      
+        // return <Redirect to="/fight" />
+        console.log(position)
+        
+        // window.location.href = "http://localhost:3000/fight";
         
       }
 
