@@ -123,7 +123,7 @@ const QuestionFight = () => {
     // setRightAnswer(true); // do i need to set state back to false at the end?? dont think so bc on page load, it should set to false bc of above
     let _id = JSON.parse(localStorage.getItem("character_id"));
     const res = await axios
-      .put("/api/character/${_id}", {
+      .put(`/api/character/${_id}`, {
         changeExperience: 10, //+ VALUE OF ENEMY.ATTACK. NEED FUNCTION ON BACK END ADDING THIS VALUE TO THE CURRENT VALUE
       })
       .then((response) => {
@@ -144,8 +144,10 @@ const QuestionFight = () => {
   const GotAnswerWrong = async () => {
     // const [wrongAnswer, setWrongAnswer] = useState(false);
     // setWrongAnswer(true);
+    let _id = JSON.parse(localStorage.getItem("character_id"));
+
     const res = await axios
-      .put("/api/character/${_id}", {
+      .put(`/api/character/${_id}`, {
         changeHitPoints: -10, //- VALUE OF ENEMY.ATTACK. NEED FUNCTION ON BACK END ADDING THIS VALUE TO THE CURRENT VALUE
       })
       .then((response) => {
