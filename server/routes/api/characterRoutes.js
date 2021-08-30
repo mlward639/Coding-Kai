@@ -52,22 +52,40 @@ router.get('/user/:userid', async (req, res) => {
 // Example: 
 // PUT Request to http://localhost:3003/api/character/6129095c379a40808472a82e
 // {
-// 	"hitPoints": 11,
-// 	"level": 4
+// 	"changedHitPoints": -2
 // }
-// In this case, the character's ID that is provided is "Hawk". This updates his hitpoints and level to the new numbers in the body.
+// In this case, the character's ID that is provided is "Hawk". This subracts 2 hitpoints from Hawk's existing hitPoints and returns the resulting new hitPoints in the response.
+
+// For experience:
+// {
+  // "changedExperience": 4
+// }
+// This adds 4 experience to the character.
 
 router.put('/:id', async (req, res) => {
   try {
-    const characterData = await Character.findOneAndUpdate(
-      { _id: req.params.id },
-      req.body,
-    );
+    const characterData = await Character.findOne({ _id: req.params.id });
+
     if (!characterData) {
       res.status(404).json({ message: 'No character with this ID found!' });
     }
 
-    res.status(200).json({ message: 'Character updated.' });
+    const updatedData = characterData;
+
+    if (req.body.changedHitPoints) {
+      updatedData.hitPoints += req.body.changedHitPoints;
+    }
+    
+    if (req.body.changedExperience) {
+      updatedData.experience += req.body.changedExperience;
+    }
+    
+    await Character.findOneAndUpdate(
+      { _id: req.params.id },
+      updatedData,
+    );
+
+    res.status(200).json({ message: 'Character updated:', updatedData });
   } catch (err) {
     res.status(400).json(err);
   }
