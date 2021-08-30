@@ -1,10 +1,12 @@
 [
     {
+        "id": 0,
         "name": "Bully",
         "hitPoints": 10,
         "attack": 1
     },
     {
+        "id": 1,
         "name": "Sensei Creese",
         "hitPoints": 25,
         "attack": 5

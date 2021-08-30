@@ -9,19 +9,19 @@ import QuestionFight from "../components/fight/question";
 import QuestionModalCorrect from "../components/fight/modalCorrect";
 import QuestionModalIncorrect from "../components/fight/modalWrong";
 
-const questionLoadHandler = async (event) => {
-  const response = await fetch("/api/question/", {
-    method: "GET",
-    headers: { "Content-Type": "application/json" },
-  });
-  if (response.ok) {
-    let question = response.json();
-    console.log("!!!!", question);
-  }
-  // else {
-  //   console.log(error);
-  // }
-};
+// const questionLoadHandler = async (event) => {
+//   const response = await fetch("/api/question/", {
+//     method: "GET",
+//     headers: { "Content-Type": "application/json" },
+//   });
+//   if (response.ok) {
+//     let question = response.json();
+//     console.log("!!!!", question);
+//   }
+//   // else {
+//   //   console.log(error);
+//   // }
+// };
 
 const FightPage = () => {
   // const { loading, data } = useQuery(QUERY_PROFILES);
@@ -30,7 +30,9 @@ const FightPage = () => {
   return (
     <>
       <div className="fightPageContainer">
-        <button onClick={questionLoadHandler}>test</button>
+        {/* <button className="test" onClick={questionLoadHandler}>
+          test
+        </button> */}
         <h1>FIGHT</h1>
         <div className="fightDiv2">
           <CharacterFight className="characterFightQuestionPage" />
