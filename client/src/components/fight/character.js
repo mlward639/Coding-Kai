@@ -19,7 +19,7 @@ import TestImg from "../../images/test-character.png";
 
 const CharacterFight = () => {
   const [currentCharacter, setCurrentCharacter] = useState("");
-  let _id = "6129c2b91d62435f3c4a3c0b"; //update _id based on current characters id... ***
+  let _id = JSON.parse(localStorage.getItem("character_id"));
   useEffect(() => {
     axios.get(`/api/character/${_id}`).then((response) => {
       console.log("1111111", response.data);

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import TestImg from "../../images/test-character.png";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 let characters2 = [
   //update with get request data from mongo db
@@ -34,6 +35,21 @@ let characters2 = [
   },
 ];
 
+function resumeGame(event) {
+  let resumeGameBtn = document.querySelector(".resumeGame");
+  resumeGameBtn = event.target;
+  const resumeGameBtnValue = resumeGameBtn.value; //getting the first buttons value no matter which you click
+  console.log("hereeee", resumeGameBtnValue);
+  localStorage.setItem("character_id", JSON.stringify(resumeGameBtnValue));
+}
+
+async function deleteGame() {
+  console.log("deleting game");
+  let _id = JSON.parse(localStorage.getItem("character_id"));
+  await axios.delete("/DELETE ROUTE PENDING/_id");
+  console.log("deleted game");
+} //TEST ONCE HAVE ROUTE
+
 const CharacterCards = () => {
   // characterHandler();
   // console.log("*", characters);
@@ -43,7 +59,7 @@ const CharacterCards = () => {
   // characters = []; ***empty page if uncomment. then delete again and it correctly loads data. otherwise it wont load data  ask saturday!!!!!
   useEffect(() => {
     console.log("use effect ran");
-    let userid = "6129c2b91d62435f3c4a3c07"; //need to dynamically update this based on logged in user ***
+    let userid = "612c8363094d0e5d58d38c93"; //need to dynamically update this based on logged in user ***
     axios.get(`/api/character/user/${userid}`).then((response) => {
       console.log("1", response.data);
       const test = response.data;
@@ -66,23 +82,23 @@ const CharacterCards = () => {
     <>
       <div
         className="characterCard max-h-screen relative  bg-white shadow-lg w-60 border-2 border-gray-500 flex items-center  flex-col"
-        key={character.id}
+        key={character._id}
       >
-        {/* <div className="absolute -top-10">
-            <img
-              className=" h-24 w-24 rounded-full object-cover characterImg"
-              src={character.img}
-              alt="character pic"
-            />
-          </div> */}
+        <div className="absolute -top-10">
+          <img
+            className=" h-24 w-24 rounded-full object-cover characterImg"
+            src={TestImg}
+            alt="character pic"
+          />
+        </div>
         <div className="mt-16 flex items-center flex-col justify-center">
           <h1 className="font-bold text-2xl mt-4 characterName ">
             {character.name}
           </h1>
-          <p className="font-semibold text-xl text-gray-500 characterHP">
+          <p className="font-semibold text-xl text-gray-500 characterHP2">
             HP: {character.hitPoints}
           </p>
-          <p className="font-semibold text-xl text-gray-500 characterAttack">
+          <p className="font-semibold text-xl text-gray-500 characterAttack2">
             Attack: {character.attack}
           </p>
           <p className="font-semibold text-xl text-gray-500 characterExperience">
@@ -93,10 +109,21 @@ const CharacterCards = () => {
           </p>
         </div>
         <div>
-          <button value={character._id} className="resumeGame">
-            Resume Game
-          </button>
-          <button className="deleteGame">Delete Game</button>
+          <Link to="/story">
+            <button
+              value={character._id}
+              className="resumeGame"
+              onClick={resumeGame}
+            >
+              Resume Game
+            </button>
+          </Link>
+
+          <Link to="/">
+            <button className="deleteGame" onClick={deleteGame}>
+              Delete Game
+            </button>
+          </Link>
         </div>
       </div>
     </>

@@ -30,9 +30,6 @@ const FightPage = () => {
   return (
     <>
       <div className="fightPageContainer">
-        {/* <button className="test" onClick={questionLoadHandler}>
-          test
-        </button> */}
         <h1>FIGHT</h1>
         <div className="fightDiv2">
           <CharacterFight className="characterFightQuestionPage" />

@@ -1,8 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { useQuery } from "@apollo/client";
-// import { QUERY_PROFILES } from "../utils/queries";
+import axios from "axios";
 import StatsCards from "../components/stats/statsCards";
+
+async function deleteGame() {
+  console.log("deleting game");
+  let _id = JSON.parse(localStorage.getItem("character_id"));
+  await axios.delete("/DELETE ROUTE PENDING/_id");
+  console.log("deleted game");
+} //TEST ONCE HAVE ROUTE
 
 const PausePage = () => {
   // const { loading, data } = useQuery(QUERY_PROFILES);
@@ -16,12 +22,14 @@ const PausePage = () => {
           <StatsCards />
         </div>
         <div className="pauseBtnsDiv">
-          <button>Resume Game</button>
+          <Link to="/game">
+            <button>Resume Game</button>
+          </Link>
           <Link to="/quit">
             <button>Save & Quit Game</button>
           </Link>
           <Link to="/quit">
-            <button>Quit Game</button>
+            <button onClick={deleteGame}>Quit Game</button>
           </Link>
         </div>
       </div>

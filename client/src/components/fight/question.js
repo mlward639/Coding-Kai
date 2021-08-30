@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-//import { Link } from "react-router-dom";
+// import QuestionModalCorrect from "./modalCorrect";
+import { Redirect, useHistory } from "react-router-dom";
 
 // let questionData;
 //TEMPORARY QUESTION TO ALLOW CREATING THE CORRECT OR WRONG FUNCTION
@@ -14,75 +15,6 @@ const optF = document.querySelector(".answerF");
 let answerChosen = "";
 
 const radios = document.getElementsByName("radioBtn");
-
-// console.log("here", optA.type);
-function getChosenAnswer() {
-  console.log("fucker");
-
-  for (let i = 0, length = radios.length; i < length; i++) {
-    if (radios[i].checked) {
-      console.log("888888", radios[i].value);
-      return (answerChosen = radios[i].value);
-    }
-  }
-}
-
-let correctAnswer = "answer_a"; //UPDATE WITH INFO FROM AXIOS CALL BELOW
-
-function CompareAnswers() {
-  getChosenAnswer();
-  if (answerChosen === correctAnswer) {
-    console.log("chose right answer");
-    GotAnswerRight();
-  } else {
-    console.log("chose wrong answer");
-    GotAnswerWrong();
-  }
-}
-
-//trying to conditionally render these components based on state ******
-const GotAnswerRight = async () => {
-  const [rightAnswer, setRightAnswer] = useState(false);
-  setRightAnswer(true); // do i need to set state back to false at the end?? dont think so bc on page load, it should set to false bc of above
-
-  const res = await axios
-    .put("NEED CHARACTER PUT ROUTE", {
-      experience: 10, //+ VALUE OF ENEMY.ATTACK. NEED FUNCTION ON BACK END ADDING THIS VALUE TO THE CURRENT VALUE
-    })
-    .then((response) => {
-      console.log(response.data);
-    });
-  const res2 = await axios
-    .put("NEED ENEMY PUT ROUTE", {
-      hitPoints: -10, // - character.attack, then needs backend functionality to update
-    })
-    .then((response) => {
-      console.log(response.data);
-    });
-};
-
-const GotAnswerWrong = async () => {
-  const [wrongAnswer, setWrongAnswer] = useState(false);
-  setWrongAnswer(true);
-  const res = await axios
-    .put("NEED CHARACTER PUT ROUTE", {
-      hitPoints: -10, //- VALUE OF ENEMY.ATTACK. NEED FUNCTION ON BACK END ADDING THIS VALUE TO THE CURRENT VALUE
-    })
-    .then((response) => {
-      console.log(response.data);
-    });
-  const res2 = await axios
-    .put("NEED ENEMY PUT ROUTE", {
-      attack: 10, // + character.attack, then needs backend functionality to update
-    })
-    .then((response) => {
-      console.log(response.data);
-    });
-};
-
-function checkingAnswers() {
-  CompareAnswers();
-}
 
 const fakeQuestion = {
   id: 1,
@@ -114,17 +46,21 @@ const fakeQuestion = {
 };
 
 const QuestionFight = () => {
+  let history = useHistory();
+
   const [currentQuestion, setCurrentQuestion] = useState([]); //maybe try setting useState to [] ***********
-  // const [correctAnswer, setCorrectAnswer] = useState(""); // need to set the correct_answer from axios call to correct answer*******************
+  const [answers, setAnswers] = useState("");
+  // need to set the correct_answer from axios call to correct answer*******************
+  const [correctAnswer, setCorrectAnswer] = useState("");
 
   // console.log("tttt", currentQuestion);
-  const randomNumber = Math.floor(Math.random() * 57); //change 57 to seeds array.length
+  const randomNumber = Math.floor(Math.random() * 56); //change 57 to seeds array.length
   // console.log(randomNumber);
   // let id = randomNumber;
   // console.log(id);
 
   useEffect(async () => {
-    // console.log("Heyyyyy");
+    console.log("Heyyyyy");
     let id = randomNumber;
     // console.log("&&&&&&", id);
     //setCurrentQuestion(""); //WHY DOING THIS HERE??? *******************
@@ -134,7 +70,9 @@ const QuestionFight = () => {
     console.log("res2", res.data.answers);
 
     console.log("res3", res.data.answers.answer_a);
-    setCurrentQuestion(res.data.answers);
+    setCurrentQuestion(res.data);
+    setAnswers(res.data.answers);
+    setCorrectAnswer(res.data.correct_answer);
     // .then((response) => {
     //   console.log("1", response.data);
     //   setCurrentQuestion(response.data);
@@ -152,6 +90,7 @@ const QuestionFight = () => {
     // .then(console.log("$$$$$$", setCurrentQuestion));
   }, []);
   console.log("------", currentQuestion.answer_a);
+  console.log("correct answer", correctAnswer);
   // console.log("tryagain", currentQuestion.answer.answer_a);
 
   // console.log(currentQuestion, "tttt");
@@ -162,19 +101,91 @@ const QuestionFight = () => {
   // console.log(currentAnswers.answer_a, "lllll");
   // console.log("$$$$$$$$", currentQuestion);
   // console.log("^^^^", currentQuestion.answers.answer_a);
+  // console.log("here", optA.type);
+  function getChosenAnswer() {
+    console.log("fucker");
 
+    for (let i = 0, length = radios.length; i < length; i++) {
+      if (radios[i].checked) {
+        console.log("888888", radios[i].value);
+        return (answerChosen = radios[i].value);
+      }
+    }
+  }
+
+  function checkingAnswers() {
+    CompareAnswers();
+  }
+
+  //trying to conditionally render these components based on state ******
+  const GotAnswerRight = async () => {
+    // const [rightAnswer, setRightAnswer] = useState(false);
+    // setRightAnswer(true); // do i need to set state back to false at the end?? dont think so bc on page load, it should set to false bc of above
+
+    // const res = await axios
+    //   .put("NEED CHARACTER PUT ROUTE", {
+    //     experience: 10, //+ VALUE OF ENEMY.ATTACK. NEED FUNCTION ON BACK END ADDING THIS VALUE TO THE CURRENT VALUE
+    //   })
+    //   .then((response) => {
+    //     console.log(response.data);
+    //   });
+    // const res2 = await axios
+    //   .put("NEED ENEMY PUT ROUTE", {
+    //     hitPoints: -10, // - character.attack, then needs backend functionality to update
+    //   })
+    //   .then((response) => {
+    //     console.log(response.data);
+    //   });
+    console.log("pre link");
+    history.push("/correct");
+    // return <Redirect to="/correct"></Redirect>;
+  };
+
+  const GotAnswerWrong = async () => {
+    // const [wrongAnswer, setWrongAnswer] = useState(false);
+    // setWrongAnswer(true);
+    // const res = await axios
+    //   .put("NEED CHARACTER PUT ROUTE", {
+    //     hitPoints: -10, //- VALUE OF ENEMY.ATTACK. NEED FUNCTION ON BACK END ADDING THIS VALUE TO THE CURRENT VALUE
+    //   })
+    //   .then((response) => {
+    //     console.log(response.data);
+    //   });
+    // const res2 = await axios
+    //   .put("NEED ENEMY PUT ROUTE", {
+    //     attack: 10, // + character.attack, then needs backend functionality to update
+    //   })
+    //   .then((response) => {
+    //     console.log(response.data);
+    //   });
+    console.log("pre link");
+    history.push("/wrong");
+
+    // return <Redirect to="/wrong"></Redirect>;
+  };
+
+  const CompareAnswers = () => {
+    getChosenAnswer();
+    if (answerChosen === correctAnswer) {
+      console.log("chose right answer");
+      GotAnswerRight();
+    } else {
+      console.log("chose wrong answer");
+      GotAnswerWrong();
+    }
+  };
   return (
     <>
       <form action="#" className="w-full md:w-1/2 border p-6 questionForm">
         <h2 className="text-2xl pb-3 font-semibold">
           Attack your enemy by answering correctly
         </h2>
-        <p className="question">{fakeQuestion.question}</p>
+        <p className="question">{currentQuestion.question}</p>
         <div>
           <div className="flex flex-col mb-3 answerChoices">
             <div className="answerDiv">
               <label className="radioLabel radioLabelA">
-                {currentQuestion.answer_a}
+                {answers.answer_a}
                 <input
                   type="radio"
                   name="radioBtn"
@@ -185,7 +196,7 @@ const QuestionFight = () => {
             </div>
             <div className="answerDiv">
               <label className="radioLabel">
-                {currentQuestion.answers.answer_b}
+                {answers.answer_b}
                 <input
                   type="radio"
                   className="radio answerB"
@@ -196,7 +207,7 @@ const QuestionFight = () => {
             </div>
             <div className="answerDiv">
               <label className="radioLabel">
-                {currentQuestion.answers.answer_c}
+                {answers.answer_c}
                 <input
                   type="radio"
                   className="radio answerC"
@@ -207,7 +218,7 @@ const QuestionFight = () => {
             </div>
             <div className="answerDiv">
               <label className="radioLabel">
-                {currentQuestion.answers.answer_d}
+                {answers.answer_d}
                 <input
                   type="radio"
                   className="radio answerD"
@@ -254,7 +265,6 @@ const QuestionFight = () => {
 
 export default QuestionFight;
 
-//need to add something to answer choices so if value is null, it does not create a div... could this be a map fxn... idk
-//*** was working... now error... look at saturday... its not running through useEffect cuz its not logging any of the console logs...*** !!! */ and it looks like its running through twice... getting two console logs for random number and $$$$
-//then need to add functionality for comparing answer to see if right. if right, subtract hp from enemy by characters attack... if enemy reaches 0, give experience points to character. orrr just add experience points to the character (maybe based on enemy's attack number).
+//and it looks like its running through twice... getting two console logs for random number and $$$$
+// if right, subtract hp from enemy by characters attack... if enemy reaches 0, give experience points to character. orrr just add experience points to the character (maybe based on enemy's attack number).
 // if wrong, subtract enemy attack points from character.
