@@ -185,46 +185,46 @@ const QuestionFight = () => {
           <div className="flex flex-col mb-3 answerChoices">
             <div className="answerDiv">
               <label className="radioLabel radioLabelA">
-                {answers.answer_a}
                 <input
                   type="radio"
                   name="radioBtn"
                   className="radio answerA"
                   value="answer_a"
                 />
+                {answers.answer_a}
               </label>
             </div>
             <div className="answerDiv">
               <label className="radioLabel">
-                {answers.answer_b}
                 <input
                   type="radio"
                   className="radio answerB"
                   value="answer_b"
                   name="radioBtn"
                 />
+                {answers.answer_b}
               </label>
             </div>
             <div className="answerDiv">
               <label className="radioLabel">
-                {answers.answer_c}
                 <input
                   type="radio"
                   className="radio answerC"
                   value="answer_c"
                   name="radioBtn"
                 />
+                {answers.answer_c}
               </label>
             </div>
             <div className="answerDiv">
               <label className="radioLabel">
-                {answers.answer_d}
                 <input
                   type="radio"
                   className="radio answerD"
                   value="answer_d"
                   name="radioBtn"
                 />
+                {answers.answer_d}
               </label>
             </div>
             {/* <div className="answerDiv">
