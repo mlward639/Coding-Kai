@@ -19,7 +19,8 @@ const QuestionModalIncorrect = () => {
               <h1 className="icon">{element}</h1>
               <h2 className="text-xl font-bold py-4 modalTitle">You Lost</h2>
               <p className="text-sm px-8 modalP">
-                You have lost *** points. Better luck next time.
+                You have lost the battle. Looks like they took some of your HP.
+                Better luck next time.
               </p>
             </div>
             <div className="p-3  mt-2 text-center space-x-4 md:block">

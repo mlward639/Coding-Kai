@@ -59,7 +59,7 @@ const CharacterCards = () => {
   // characters = []; ***empty page if uncomment. then delete again and it correctly loads data. otherwise it wont load data  ask saturday!!!!!
   useEffect(() => {
     console.log("use effect ran");
-    let userid = "612c14886e0b55abccdd6451"; //need to dynamically update this based on logged in user ***
+    let userid = "612c8363094d0e5d58d38c93"; //need to dynamically update this based on logged in user ***
     axios.get(`/api/character/user/${userid}`).then((response) => {
       console.log("1", response.data);
       const test = response.data;

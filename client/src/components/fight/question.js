@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import QuestionModalCorrect from "./modalCorrect";
+// import QuestionModalCorrect from "./modalCorrect";
 import { Redirect, useHistory } from "react-router-dom";
 
 // let questionData;
@@ -265,7 +265,6 @@ const QuestionFight = () => {
 
 export default QuestionFight;
 
-//need to add something to answer choices so if value is null, it does not create a div... could this be a map fxn... idk
-//*** was working... now error... look at saturday... its not running through useEffect cuz its not logging any of the console logs...*** !!! */ and it looks like its running through twice... getting two console logs for random number and $$$$
-//then need to add functionality for comparing answer to see if right. if right, subtract hp from enemy by characters attack... if enemy reaches 0, give experience points to character. orrr just add experience points to the character (maybe based on enemy's attack number).
+//and it looks like its running through twice... getting two console logs for random number and $$$$
+// if right, subtract hp from enemy by characters attack... if enemy reaches 0, give experience points to character. orrr just add experience points to the character (maybe based on enemy's attack number).
 // if wrong, subtract enemy attack points from character.

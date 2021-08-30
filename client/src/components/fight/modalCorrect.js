@@ -21,7 +21,8 @@ const QuestionModalCorrect = () => {
                 Congratulations!
               </h2>
               <p className="text-sm px-8 modalP">
-                You have won this battle. You are rewarded with ***.
+                You have won this battle. As a reward, you've earned+ experience
+                points!
               </p>
             </div>
             <div className="p-3  mt-2 text-center space-x-4 md:block">

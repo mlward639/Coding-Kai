@@ -29,7 +29,10 @@ const Stats = () => {
 
   return (
     <>
-      <div className="absolute -top-10 characterImgPauseDiv" key={character.id}>
+      <div
+        className="absolute -top-10 characterImgPauseDiv"
+        key={currentCharacter.id}
+      >
         <img
           className=" h-24 w-24 rounded-full object-cover characterImg characterImgPause"
           src={TestImg}

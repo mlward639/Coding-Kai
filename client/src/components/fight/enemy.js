@@ -3,7 +3,7 @@ import axios from "axios";
 
 // import Stats from "./stats";
 // import { v4 as uuidv4 } from "uuid";
-import TestEnemyImg from "../../images/test-enemy.jpg";
+import TestEnemyImg from "../../images/test-enemy.png";
 
 // const enemy =
 //   //update with get request data from mongo db
