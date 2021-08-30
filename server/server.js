@@ -5,13 +5,12 @@ const path = require('path');
 const db = require('./config/connection');
 const routes = require('./routes');
 const models = require('./models');
-// NOTE: perhaps need for later?
-// const sequelize = require('./config/connection');
-// const SequelizeStore = require('connect-session-sequelize')(session.Store);
+// updates
+const { ApolloServer } = require('apollo-server-express');
+const { typeDefs, resolvers } = require('./schemas');
+const { authMiddleware } = require('./utils/auth');
 
-// CB: NEED TO ACCESS MONGODB?
-// const monogojs = require("monogojs");
-// ADD IF NEEDED: const helpers = require('./utils/helpers');
+
 const PORT = process.env.PORT || 3003;
 const app = express();
 const sess = {
@@ -23,6 +22,30 @@ const sess = {
   //   db: sequelize
   // })
 };
+
+
+// UPDATE: APOLLO 
+// const server = new ApolloServer({
+//   typeDefs,
+//   resolvers,
+//   context: authMiddleware,
+// });
+
+
+async function startApolloServer(typeDefs, resolvers) {
+  const server = new ApolloServer({ typeDefs, resolvers });
+  // const { url } = await server.start();
+  await server.start();
+  server.applyMiddleware({ app });
+  console.log("START APOLLO");
+  // console.log(`🚀 Server ready at ${url}`);
+}
+
+startApolloServer(typeDefs, resolvers);
+// await server.start(); 
+// server.applyMiddleware({ app });
+
+
 // needed for session that is used in login route 
 app.use(session(sess));
 
@@ -38,8 +61,11 @@ mongoose.connect(
     useUnifiedTopology: true,
     useCreateIndex: true,
     useFindAndModify: true,
-  }
-);
+  }).then(() => {
+    console.log("Mongo connected successfully")
+  }).catch((err) => {
+    console.log(`Connection error ${err}`);
+  });
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
@@ -48,41 +74,21 @@ if (process.env.NODE_ENV === 'production') {
 // routes
 app.use(routes);
 
+// db.once('open', () => {
+//   app.listen(PORT, () => {
+//     console.log(`App running on port ${PORT}!`);
+//   });
+// });
+
+// UPDATES 
 db.once('open', () => {
   app.listen(PORT, () => {
-    console.log(`App running on port ${PORT}!`);
+    console.log(`API server running on port ${PORT}!`);
+    // console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
   });
 });
 
 module.exports = mongoose.connection; // required for seeds
 
-//====================================================================================================
-// DELETE LATER
-//----------------------------------------------------
-// IS any of this needed with mongoose (rather than mysql)
-// const sequelize = require("./config/connection");
-// const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
-// const sess = {
-//   secret: "Super secret secret",
-//   cookie: {},
-//   resave: false,
-//   saveUninitialized: true,
-//   logging: false,
-//   store: new SequelizeStore({
-//     db: sequelize,
-//   }),
-// };
 
-// app.use(session(sess));
-//-------------------------------------------------------
-
-// app.use(express.urlencoded({ extended: false }));
-// app.use(express.json());
-//app.use(express.static(path.join(__dirname, 'public'))); // are we using a public folder or client folder?? update accordingly. for now, just connecting to test index.html
-
-// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/budget', {
-//   useNewUrlParser: true,
-//   useFindAndModify: false,
-// });
-//======================================================================================================
