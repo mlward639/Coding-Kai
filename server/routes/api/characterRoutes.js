@@ -49,4 +49,10 @@ router.get('/user/:userid', async (req, res) => {
   }
 });
 
+// TODO: PUT Route for updating characters
+
+// TODO: DELETE Route for deleting characters
+
+// TODO: POST Route for creating characters
+
 module.exports = router;
