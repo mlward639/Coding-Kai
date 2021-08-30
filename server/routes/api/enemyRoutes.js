@@ -32,6 +32,4 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// TODO: PUT Routes for updating enemies
-
 module.exports = router;

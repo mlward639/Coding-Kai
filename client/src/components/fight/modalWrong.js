@@ -19,11 +19,12 @@ const QuestionModalIncorrect = () => {
               <h1 className="icon">{element}</h1>
               <h2 className="text-xl font-bold py-4 modalTitle">You Lost</h2>
               <p className="text-sm px-8 modalP">
-                You have lost *** points. Better luck next time.
+                You have lost the battle. Looks like they took some of your HP.
+                Better luck next time.
               </p>
             </div>
             <div className="p-3  mt-2 text-center space-x-4 md:block">
-              <Link to="/fight">
+              <Link to="/game">
                 <button className="mb-2 md:mb-0 border border-red-500 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg congratsReturnBtn">
                   Return to the Game
                 </button>
@@ -39,5 +40,3 @@ const QuestionModalIncorrect = () => {
 export default QuestionModalIncorrect;
 
 //do something with set state.
-
-//update this Link location to the map once we have that page

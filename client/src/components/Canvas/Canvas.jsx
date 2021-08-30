@@ -3,6 +3,8 @@ import React, { useRef, useEffect } from 'react'
 import "./canvas.css"
 import Player from "../player"  
 import Enemy from '../enemy/enemy'
+import Stats2 from './stats'
+
 
 const Canvas = props => {
 
@@ -105,14 +107,23 @@ const enemiesList = indexes.map(function(index){
       {enemiesList}
      
   </div>
-  <div>null
-    {/* this is where the stats $ directions container will go */}<p style={{color:'white'}}>This is stuff</p>
+  <div style={{display:'flex', flexDirection:'column', alignItems: 'center', justifyContent: 'center', marginLeft: "-320px"}}>
+  <div style={{color:'white', minWidth: "320px", minHeight: '320px'}}>
+    {/* this is where the stats $ directions container will go to RIGHT*/}
+    <Stats2 />
   </div>
+  <div className="border-2 border-gray-500 instructions" style={{color:'white', minWidth: "320px", minHeight: '320px'}}>
+    <p>Use the arrow keys to move around the map</p>
+  <i class="far fa-arrow-alt-circle-up">Up</i>
+  <i class="far fa-arrow-alt-circle-down">Down</i>
+  <i class="far fa-arrow-alt-circle-right">Right</i>
+  <i class="far fa-arrow-alt-circle-left">Left</i>
+  <p>Press the spacebar to pause game and view menu screen</p>
+  <p>When in front of an enemy, press the enter button twice to fight them.</p>        
+           </div>
+       </div>
   </div>
-  <div>null
-         
-    {/* This is where the quiz section can go */}<p style={{color:'white'}}>This is stuff</p>
-  </div>
+
   
   </>
   )}
