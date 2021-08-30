@@ -101,7 +101,7 @@ const NewUser = () => {
       </div>
       <div className="nextPageContainer">
         <button className="letsPlay">
-          <Link to="/new">Let's Play!</Link>
+          <Link to="/story">Let's Play!</Link>
         </button>
       </div>
     </>
