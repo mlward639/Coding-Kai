@@ -52,10 +52,15 @@ router.get('/user/:userid', async (req, res) => {
 // Example: 
 // PUT Request to http://localhost:3003/api/character/6129095c379a40808472a82e
 // {
-// 	"hitPoints": 11,
-// 	"level": 4
+// 	"changedHitPoints": -2
 // }
-// In this case, the character's ID that is provided is "Hawk". This updates his hitpoints and level to the new numbers in the body.
+// In this case, the character's ID that is provided is "Hawk". This subracts 2 hitpoints from Hawk's existing hitPoints and returns the resulting new hitPoints in the response.
+
+// For experience:
+// {
+  // "changedExperience": 4
+// }
+// This adds 4 experience to the character.
 
 router.put('/:id', async (req, res) => {
   try {
@@ -67,9 +72,14 @@ router.put('/:id', async (req, res) => {
 
     const updatedData = characterData;
 
-    updatedData.hitPoints += req.body.subtractedPoints;
-    updatedData.experience += req.body.addedExperience;
-
+    if (req.body.changedHitPoints) {
+      updatedData.hitPoints += req.body.changedHitPoints;
+    }
+    
+    if (req.body.changedExperience) {
+      updatedData.experience += req.body.changedExperience;
+    }
+    
     await Character.findOneAndUpdate(
       { _id: req.params.id },
       updatedData,
