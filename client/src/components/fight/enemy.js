@@ -39,7 +39,7 @@ const EnemyFight = () => {
     //   setCurrentEnemy(response.data);
     //   console.log("######currentEnemy", currentEnemy);
     // });
-    const randomNumber = Math.floor(Math.random() * 2); // ***!!! 2 is current number of enemies
+    const randomNumber = Math.floor(Math.random() * 16); // ***!!! 2 is current number of enemies
     let id = randomNumber;
     console.log("id", id);
     axios.get(`/api/enemy/${id}`).then((response) => {
