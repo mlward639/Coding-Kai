@@ -121,17 +121,17 @@ const QuestionFight = () => {
   const GotAnswerRight = async () => {
     // const [rightAnswer, setRightAnswer] = useState(false);
     // setRightAnswer(true); // do i need to set state back to false at the end?? dont think so bc on page load, it should set to false bc of above
-
-    // const res = await axios
-    //   .put("NEED CHARACTER PUT ROUTE", {
-    //     experience: 10, //+ VALUE OF ENEMY.ATTACK. NEED FUNCTION ON BACK END ADDING THIS VALUE TO THE CURRENT VALUE
-    //   })
-    //   .then((response) => {
-    //     console.log(response.data);
-    //   });
+    let _id = JSON.parse(localStorage.getItem("character_id"));
+    const res = await axios
+      .put("/api/character/${_id}", {
+        changeExperience: 10, //+ VALUE OF ENEMY.ATTACK. NEED FUNCTION ON BACK END ADDING THIS VALUE TO THE CURRENT VALUE
+      })
+      .then((response) => {
+        console.log(response.data);
+      });
     // const res2 = await axios
     //   .put("NEED ENEMY PUT ROUTE", {
-    //     hitPoints: -10, // - character.attack, then needs backend functionality to update
+    //     changeHitPoints: -10, // - character.attack, then needs backend functionality to update
     //   })
     //   .then((response) => {
     //     console.log(response.data);
@@ -144,13 +144,13 @@ const QuestionFight = () => {
   const GotAnswerWrong = async () => {
     // const [wrongAnswer, setWrongAnswer] = useState(false);
     // setWrongAnswer(true);
-    // const res = await axios
-    //   .put("NEED CHARACTER PUT ROUTE", {
-    //     hitPoints: -10, //- VALUE OF ENEMY.ATTACK. NEED FUNCTION ON BACK END ADDING THIS VALUE TO THE CURRENT VALUE
-    //   })
-    //   .then((response) => {
-    //     console.log(response.data);
-    //   });
+    const res = await axios
+      .put("/api/character/${_id}", {
+        changeHitPoints: -10, //- VALUE OF ENEMY.ATTACK. NEED FUNCTION ON BACK END ADDING THIS VALUE TO THE CURRENT VALUE
+      })
+      .then((response) => {
+        console.log(response.data);
+      });
     // const res2 = await axios
     //   .put("NEED ENEMY PUT ROUTE", {
     //     attack: 10, // + character.attack, then needs backend functionality to update
@@ -185,46 +185,46 @@ const QuestionFight = () => {
           <div className="flex flex-col mb-3 answerChoices">
             <div className="answerDiv">
               <label className="radioLabel radioLabelA">
-                {answers.answer_a}
                 <input
                   type="radio"
                   name="radioBtn"
                   className="radio answerA"
                   value="answer_a"
                 />
+                {answers.answer_a}
               </label>
             </div>
             <div className="answerDiv">
               <label className="radioLabel">
-                {answers.answer_b}
                 <input
                   type="radio"
                   className="radio answerB"
                   value="answer_b"
                   name="radioBtn"
                 />
+                {answers.answer_b}
               </label>
             </div>
             <div className="answerDiv">
               <label className="radioLabel">
-                {answers.answer_c}
                 <input
                   type="radio"
                   className="radio answerC"
                   value="answer_c"
                   name="radioBtn"
                 />
+                {answers.answer_c}
               </label>
             </div>
             <div className="answerDiv">
               <label className="radioLabel">
-                {answers.answer_d}
                 <input
                   type="radio"
                   className="radio answerD"
                   value="answer_d"
                   name="radioBtn"
                 />
+                {answers.answer_d}
               </label>
             </div>
             {/* <div className="answerDiv">

@@ -32,11 +32,29 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+//* Get a single character by name
+router.get('/name/:name', async (req, res) => {
+  try {
+    const characterData = await Character.findOne({
+      name: req.params.name,
+    });
+    if (!characterData) {
+      res.status(404).json({ message: 'No character with this name found!' });
+    }
+
+    res.status(200).json(characterData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 //* Get character by user id
 router.get('/user/:userid', async (req, res) => {
   // console.log(req.params.userid);
   try {
-    const characterData = await Character.find({ "user_id": ObjectId(req.params.userid) }); // Find all characters with userid in params
+    const characterData = await Character.find({
+      user_id: ObjectId(req.params.userid),
+    }); // Find all characters with userid in params
     // console.log(characterData);
     if (!characterData.length) {
       res.status(404).json({ message: 'No characters found for this user!' });
@@ -49,7 +67,7 @@ router.get('/user/:userid', async (req, res) => {
 });
 
 //* Route for updating characters. Just include the stats you want to update in the request body, and they will be updated in the character.
-// Example: 
+// Example:
 // PUT Request to http://localhost:3003/api/character/6129095c379a40808472a82e
 // {
 // 	"changedHitPoints": -2
@@ -58,7 +76,7 @@ router.get('/user/:userid', async (req, res) => {
 
 // For experience:
 // {
-  // "changedExperience": 4
+// "changedExperience": 4
 // }
 // This adds 4 experience to the character.
 
@@ -75,15 +93,12 @@ router.put('/:id', async (req, res) => {
     if (req.body.changedHitPoints) {
       updatedData.hitPoints += req.body.changedHitPoints;
     }
-    
+
     if (req.body.changedExperience) {
       updatedData.experience += req.body.changedExperience;
     }
-    
-    await Character.findOneAndUpdate(
-      { _id: req.params.id },
-      updatedData,
-    );
+
+    await Character.findOneAndUpdate({ _id: req.params.id }, updatedData);
 
     res.status(200).json({ message: 'Character updated:', updatedData });
   } catch (err) {
@@ -94,9 +109,11 @@ router.put('/:id', async (req, res) => {
 //* Delete a character by id. Just include their id in the request parameters and character will be deleted from db.
 router.delete('/:id', async (req, res) => {
   try {
-    const characterData = await Character.findOneAndDelete({ _id: req.params.id });
+    const characterData = await Character.findOneAndDelete({
+      _id: req.params.id,
+    });
     if (!characterData) {
-      res.status(404).json({ message: 'No character with this ID found! '});
+      res.status(404).json({ message: 'No character with this ID found! ' });
     }
 
     res.status(200).json({ message: 'Character deleted.' });
@@ -109,7 +126,7 @@ router.delete('/:id', async (req, res) => {
 //! IMPORTANT: Use following format in your request body:
 // {
 // 	"user_id": [
-// 		"6129095c379a40808472a82a" 
+// 		"6129095c379a40808472a82a"
 // 	],
 // 	"name": "Miguel",
 // 	"hitPoints": 12,
@@ -124,7 +141,7 @@ router.post('/', async (req, res) => {
     await Character.create(characterData);
 
     res.status(200).json({ message: 'New character added!' });
-  } catch(err) {
+  } catch (err) {
     res.status(400).json(err);
   }
 });
