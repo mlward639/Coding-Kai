@@ -121,17 +121,17 @@ const QuestionFight = () => {
   const GotAnswerRight = async () => {
     // const [rightAnswer, setRightAnswer] = useState(false);
     // setRightAnswer(true); // do i need to set state back to false at the end?? dont think so bc on page load, it should set to false bc of above
-
-    // const res = await axios
-    //   .put("NEED CHARACTER PUT ROUTE", {
-    //     experience: 10, //+ VALUE OF ENEMY.ATTACK. NEED FUNCTION ON BACK END ADDING THIS VALUE TO THE CURRENT VALUE
-    //   })
-    //   .then((response) => {
-    //     console.log(response.data);
-    //   });
+    let _id = JSON.parse(localStorage.getItem("character_id"));
+    const res = await axios
+      .put("/api/character/${_id}", {
+        changeExperience: 10, //+ VALUE OF ENEMY.ATTACK. NEED FUNCTION ON BACK END ADDING THIS VALUE TO THE CURRENT VALUE
+      })
+      .then((response) => {
+        console.log(response.data);
+      });
     // const res2 = await axios
     //   .put("NEED ENEMY PUT ROUTE", {
-    //     hitPoints: -10, // - character.attack, then needs backend functionality to update
+    //     changeHitPoints: -10, // - character.attack, then needs backend functionality to update
     //   })
     //   .then((response) => {
     //     console.log(response.data);
@@ -144,13 +144,13 @@ const QuestionFight = () => {
   const GotAnswerWrong = async () => {
     // const [wrongAnswer, setWrongAnswer] = useState(false);
     // setWrongAnswer(true);
-    // const res = await axios
-    //   .put("NEED CHARACTER PUT ROUTE", {
-    //     hitPoints: -10, //- VALUE OF ENEMY.ATTACK. NEED FUNCTION ON BACK END ADDING THIS VALUE TO THE CURRENT VALUE
-    //   })
-    //   .then((response) => {
-    //     console.log(response.data);
-    //   });
+    const res = await axios
+      .put("/api/character/${_id}", {
+        changeHitPoints: -10, //- VALUE OF ENEMY.ATTACK. NEED FUNCTION ON BACK END ADDING THIS VALUE TO THE CURRENT VALUE
+      })
+      .then((response) => {
+        console.log(response.data);
+      });
     // const res2 = await axios
     //   .put("NEED ENEMY PUT ROUTE", {
     //     attack: 10, // + character.attack, then needs backend functionality to update

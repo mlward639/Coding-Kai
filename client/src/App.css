@@ -174,7 +174,8 @@ body {
 }
 
 /*HOMEPAGE*/
-.welcomeHomepage {
+.welcomeHomepage,
+.welcomeNewUSer {
   color: white;
   text-align: center;
   /* border: 2px solid white; */
@@ -184,7 +185,8 @@ body {
   margin-bottom: 70px;
 }
 
-.characterCardsContainer {
+.characterCardsContainer,
+.newUserContainer {
   display: flex;
   flex-wrap: wrap;
   /* border: 2px solid yellow; */
@@ -241,7 +243,8 @@ body {
   margin-right: 10px;
 }
 
-.startNewGameContainer {
+.startNewGameContainer,
+.nextPageContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -263,6 +266,52 @@ body {
   border: solid 2px green;
   width: 100vw; /*whjy isnt it equal to the width of screen and image???*/
   height: 100vh;
+}
+
+/* NEW CHARACTER PAGE */
+.statsCard3 {
+  padding-bottom: 10px;
+  background-color: var(--mediumGray);
+  border-radius: 25px;
+  border: none;
+  width: 35%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 105px;
+}
+
+.newCharacterImg {
+  /* margin-top: -60px; */
+}
+
+.newUserStats {
+  /* border: 2px solid green; */
+  width: 100%;
+  padding: 10px;
+}
+.characterName4 {
+  margin-top: 70px;
+  font-size: 34px;
+  text-align: center;
+}
+
+.characterHP4,
+.characterAttack4,
+.characterExperience4,
+.characterLevel4 {
+  padding: 7px;
+  text-align: center;
+}
+
+.letsPlay {
+  background-color: var(--hotPink);
+  color: black;
+  border-radius: 25px;
+  padding: 7px;
+  padding-right: 40px;
+  padding-left: 40px;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 /* STORY PAGE */

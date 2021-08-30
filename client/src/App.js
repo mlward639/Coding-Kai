@@ -14,6 +14,7 @@ import MeetTeamPage from "./pages/meetTeam";
 import Canvas from "./components/Canvas/Canvas";
 import QuestionModalCorrect from "./components/fight/modalCorrect";
 import QuestionModalIncorrect from "./components/fight/modalWrong";
+import NewUser from "./pages/newUser";
 
 //routing NOT working
 export default function App() {
@@ -56,6 +57,9 @@ export default function App() {
           </Route>
           <Route path="/wrong">
             <QuestionModalIncorrect />
+          </Route>
+          <Route path="/new">
+            <NewUser />
           </Route>
         </Switch>
       </div>

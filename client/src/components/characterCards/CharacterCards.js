@@ -10,7 +10,7 @@ let characters2 = [
     id: uuidv4(),
     name: "Test Character",
     img: TestImg,
-    HP: 10,
+    hitPoints: 10,
     attack: 1,
     experience: 5,
     level: 2,
@@ -19,7 +19,7 @@ let characters2 = [
     id: uuidv4(),
     name: "Test Character",
     img: TestImg,
-    HP: 10,
+    hitPoints: 10,
     attack: 1,
     experience: 5,
     level: 2,
@@ -28,7 +28,7 @@ let characters2 = [
     id: uuidv4(),
     name: "Test Character",
     img: TestImg,
-    HP: 10,
+    hitPoints: 10,
     attack: 1,
     experience: 5,
     level: 2,
@@ -96,7 +96,7 @@ const CharacterCards = () => {
             {character.name}
           </h1>
           <p className="font-semibold text-xl text-gray-500 characterHP2">
-            HP: {character.hitPoints}
+            hitPoints: {character.hitPoints}
           </p>
           <p className="font-semibold text-xl text-gray-500 characterAttack2">
             Attack: {character.attack}

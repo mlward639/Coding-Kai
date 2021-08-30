@@ -19,8 +19,8 @@ const Homepage = () => {
         <CharacterCards />
       </div>
       <div className="startNewGameContainer">
-        <Link to="/story">
-          <button className="startNewGame" onClick="createNewCharacter">Start a new game</button>
+        <Link to="/new">
+          <button className="startNewGame">Start a new game</button>
         </Link>
       </div>
     </>
@@ -29,22 +29,7 @@ const Homepage = () => {
 
 export default Homepage;
 
-const article = { title: 'Axios POST Request Example' };
-axios.post('https://reqres.in/api/articles', article)
-    .then(response => element.innerHTML = response.data.id);
-
-const createNewCharacter = () => {
-  const newCharacter = 
-  {
-    "name": "Miguel",
-    "hitPoints": 12,
-    "attack": 1.5,
-    "experience": 7,
-    "level": 5
-  };
-  axios.post('/api/character').then(response)=> console.log(response.data)
-  
-}
+///*** ADD A USER ID FROM LOCAL STORAGE ONCE ITS AVAILABLE */
 
 //START NEW GAME!!! NEED TO DOOOOO! ****** !!!!!!
 
