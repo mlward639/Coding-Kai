@@ -1,9 +1,38 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+// const coord = React.createContext(null)
+// {x: -640, y: -304}
+
+
+const getX = JSON.parse(localStorage.getItem('coordX'));
+const getY = JSON.parse(localStorage.getItem('coordY'));
+let coord = {
+  x: 0,
+  y: 0
+};
+coord.x = getX;
+coord.y = getY;
 
 export default function useWalk(maxSteps) {
-  const [position, setPosition] = useState({ x: -640, y: -304 });
+  let [position, setPosition] = useState();
   const [dir, setDir] = useState(0);
   const [step, setStep] = useState(0);
+  const [fresh, setFresh] = useState(true);
+
+ 
+
+  useEffect(() => {
+    if (fresh){
+      setPosition(coord);
+      setFresh(false)
+    }
+  }, [])
+
+  
+
+
+
+  
 
   const directions = {
     down: 0,
@@ -30,8 +59,15 @@ export default function useWalk(maxSteps) {
   };
   // This function will become the enemy encounter function
   function checkTouching() {
-    console.log("This is checking");
+    localStorage.setItem('coordX', position.x,);
+    localStorage.setItem('coordY', position.y);
     window.location.href = "/fight";
+  }
+
+  function pausePageGame() {
+    localStorage.setItem('coordX', position.x,);
+    localStorage.setItem('coordY', position.y);
+    window.location.href = "/pause";
   }
 
   function walk(dir) {
@@ -373,6 +409,12 @@ export default function useWalk(maxSteps) {
       checkTouching();
       return;
     }
+    // pauses
+      else if (dir==="spacebar"){
+        pausePageGame();
+        return
+      }
+  
     // updates the position of whatever is using useWalk (in our case player)
     else {
       console.log(position);
