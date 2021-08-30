@@ -114,10 +114,10 @@ const enemiesList = indexes.map(function(index){
   </div>
   <div className="border-2 border-gray-500 instructions" style={{color:'white', minWidth: "320px", minHeight: '320px'}}>
     <p>Use the arrow keys to move around the map</p>
-  <i class="far fa-arrow-alt-circle-up">Up</i>
-  <i class="far fa-arrow-alt-circle-down">Down</i>
-  <i class="far fa-arrow-alt-circle-right">Right</i>
-  <i class="far fa-arrow-alt-circle-left">Left</i>
+  <i className="far fa-arrow-alt-circle-up">Up</i>
+  <i className="far fa-arrow-alt-circle-down">Down</i>
+  <i className="far fa-arrow-alt-circle-right">Right</i>
+  <i className="far fa-arrow-alt-circle-left">Left</i>
   <p>Press the spacebar to pause game and view menu screen</p>
   <p>When in front of an enemy, press the enter button twice to fight them.</p>        
            </div>

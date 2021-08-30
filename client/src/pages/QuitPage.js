@@ -6,6 +6,8 @@ import StatsCards from "../components/stats/statsCards";
 
 const removeCharacterLocalStorage = () => {
   localStorage.removeItem("character_id");
+  localStorage.removeItem("coordX");
+  localStorage.removeItem("coordY"); //COME BACK TO *****
 };
 
 const QuitPage = () => {

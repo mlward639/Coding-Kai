@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 // import QuestionModalCorrect from "./modalCorrect";
-import { Redirect, useHistory } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 
 // let questionData;
 //TEMPORARY QUESTION TO ALLOW CREATING THE CORRECT OR WRONG FUNCTION
@@ -137,7 +137,8 @@ const QuestionFight = () => {
     //     console.log(response.data);
     //   });
     console.log("pre link");
-    history.push("/correct");
+    // history.push("/correct");
+    return <Link to="/correct"></Link>;
     // return <Redirect to="/correct"></Redirect>;
   };
 
