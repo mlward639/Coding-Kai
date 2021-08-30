@@ -4,6 +4,7 @@ import TestImg from "../../images/test-character.png";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+
 let characters2 = [
   //update with get request data from mongo db
   {

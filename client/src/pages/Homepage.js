@@ -11,6 +11,8 @@ const Homepage = () => {
   // const { loading, data } = useQuery(QUERY_PROFILES);
   // const profiles = data?.profiles || [];
   // console.log(GetCharacters[0].name, "5555");
+  localStorage.setItem('coordX', -640,);
+  localStorage.setItem('coordY', -304);
 
   return (
     <>
