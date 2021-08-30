@@ -32,13 +32,13 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public'))); // are we using a public folder or client folder??
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/codingKai_db',
+  process.env.MONGODB_URI || 'mongodb://localhost/CodingKai',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
-    useFindAndModify: true,
-  }
+    useFindAndModify: false,
+  },
 );
 
 if (process.env.NODE_ENV === 'production') {
