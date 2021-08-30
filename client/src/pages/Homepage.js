@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 // import { useQuery } from "@apollo/client";
 // import { QUERY_PROFILES } from "../utils/queries";
 import CharacterCards from "../components/characterCards/CharacterCards";
@@ -9,6 +10,7 @@ const username = "Test User"; //update with get request data from mongo db
 const Homepage = () => {
   // const { loading, data } = useQuery(QUERY_PROFILES);
   // const profiles = data?.profiles || [];
+  // console.log(GetCharacters[0].name, "5555");
 
   return (
     <>
@@ -26,5 +28,7 @@ const Homepage = () => {
 };
 
 export default Homepage;
+
+//START NEW GAME!!! NEED TO DOOOOO! ****** !!!!!!
 
 //DO WE WANT A SELECT CHARACTER PAGE (so when they click start new game, it takes them to select character page)?? Or just randomly assign them a character??

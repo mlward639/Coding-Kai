@@ -64,26 +64,30 @@ Coding Kai is a 2D RPG allowing characters to interact in each level and overcom
 
 ## Installation
 
+Go to deployed URL below
+
 ## Usage
+
+On page load, you can login or signup to create a new account. Once logged in, you can start the game. Choose to play with a new or existing character. This will take you to the story page and then to the map. Move around the map using the arrow keys (up, down, left, right). When you encounter an enemy you would like to fight, tap enter twice to enter the fight page. Click start fight and you will be presented with a coding question to answer. Get it right and you win points. Get it wrong and your enemy wins and you lose points. To pause the game, press the space bar which opens the pause/menu screen. From there, you can return to the game you were playing or quit. You can choose to save your game to pick up where you left off at a later point or delete your game.
 
 ## Credits
 
 Libraries:
 
 - Node.js and Express.js: RESTful API
-  DO WE NEED SEQUELIZE WITH MONGO OR IS THIS JUST MYSQL ---------
-- Express-session and connect-session-sequelize: authentication ----------
+- Express-session and connect-session-sequelize: authentication ----------jsonwebtoken
 - Mongoose: Object Data Modeling (ODM) library for MongoDB and Node.js
-- React-game-engine
 - Heroku: deploy application
-- React: CSS framework
+- React, react-dom, react-router-dom: user interface
+- Axios: API requests
 - Bcrypt: hash password
-- Dotenv: store sensitive info using environmental variables
 - Path: working with file and directory paths
 - Wireframe cc: create wireframes
+- Tailwinds: CSS framework
 - Eslint, prettier: formatting
 - QuizAPI: coding questions
 - OpenGameArt: sprites
+- Font Awesome: icons
 
 Collaborative project between <a href="https://github.com/bonang8">Clarisse Bonang</a>, <a href="https://github.com/roomsiejones">Jonathon Renaud</a>, <a href="https://github.com/mlward639">Maggie Ward</a>, and <a href="https://github.com/zack-khan">Zachary Khan</a>.
 

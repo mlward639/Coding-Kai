@@ -12,15 +12,14 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import MeetTeamPage from "./pages/meetTeam";
 import Canvas from "./components/Canvas/Canvas";
-
-
-
+import QuestionModalCorrect from "./components/fight/modalCorrect";
+import QuestionModalIncorrect from "./components/fight/modalWrong";
 
 //routing NOT working
 export default function App() {
   return (
     <Router>
-      <div className="container" >
+      <div className="container">
         <Switch>
           <Route exact path="/">
             <Homepage />
@@ -51,6 +50,12 @@ export default function App() {
           </Route>
           <Route path="/game">
             <Canvas />
+          </Route>
+          <Route path="/correct">
+            <QuestionModalCorrect />
+          </Route>
+          <Route path="/wrong">
+            <QuestionModalIncorrect />
           </Route>
         </Switch>
       </div>

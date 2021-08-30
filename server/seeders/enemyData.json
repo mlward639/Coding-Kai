@@ -1,12 +1,98 @@
 [
     {
-        "name": "Bully",
+        "id": 0,
+        "name": "Antonin Dolohov",
         "hitPoints": 10,
         "attack": 1
     },
     {
-        "name": "Sensei Creese",
+        "id": 1,
+        "name": "Amycus Carrow",
         "hitPoints": 25,
         "attack": 5
+    },
+    {
+        "id": 2,
+        "name": "Alecto Carrow",
+        "hitPoints": 5,
+        "attack": 3
+    },
+    {
+        "id": 3,
+        "name": "Augustus Rookwood",
+        "hitPoints": 5,
+        "attack": 5
+    },
+    {
+        "id": 4,
+        "name": "Avery Jnr",
+        "hitPoints": 10,
+        "attack": 1
+    },
+    {
+        "id": 5,
+        "name": "Barty Crouch Jnr",
+        "hitPoints": 15,
+        "attack": 8
+    },
+    {
+        "id": 6,
+        "name": "Bellatrix Lestrange",
+        "hitPoints": 17,
+        "attack": 1
+    },
+    {
+        "id": 7,
+        "name": "Corban Yaxley",
+        "hitPoints": 5,
+        "attack": 1
+    },
+    {
+        "id": 8,
+        "name": "Crabbe Snr",
+        "hitPoints": 16,
+        "attack": 12
+    },
+    {
+        "id": 9,
+        "name": "Draco Malfoy",
+        "hitPoints": 25,
+        "attack": 5
+    },
+    {
+        "id": 10,
+        "name": "Fenrir Greyback",
+        "hitPoints": 14,
+        "attack": 7
+    },
+    {
+        "id": 11,
+        "name": "Goyle Snr",
+        "hitPoints": 17,
+        "attack": 3
+    },
+    {
+        "id": 12,
+        "name": "Peter Pettigrew",
+        "hitPoints": 24,
+        "attack": 6
+    },
+    {
+        "id": 13,
+        "name": "Regulus Black",
+        "hitPoints": 16,
+        "attack": 2
+    },
+    {
+        "id": 14,
+        "name": "Severus Snape",
+        "hitPoints": 30,
+        "attack": 13
+    },
+    {
+        "id": 15,
+        "name": "Wilkes",
+        "hitPoints": 15,
+        "attack": 3
     }
   ]

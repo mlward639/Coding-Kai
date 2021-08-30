@@ -23,7 +23,7 @@ const sess = {
   //   db: sequelize
   // })
 };
-// needed for session that is used in login route 
+// needed for session that is used in login route
 app.use(session(sess));
 
 //  SET UP MIDDLEWARE

@@ -21,11 +21,12 @@ const QuestionModalCorrect = () => {
                 Congratulations!
               </h2>
               <p className="text-sm px-8 modalP">
-                You have won this battle. You are rewarded with ***.
+                You have won this battle. As a reward, you've earned+ experience
+                points!
               </p>
             </div>
             <div className="p-3  mt-2 text-center space-x-4 md:block">
-              <Link to="/fight">
+              <Link to="/game">
                 <button className="mb-2 md:mb-0 border border-red-500 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg congratsReturnBtn">
                   Return to the Game
                 </button>
@@ -41,5 +42,3 @@ const QuestionModalCorrect = () => {
 export default QuestionModalCorrect;
 
 //do something with set state. if its a match, set state to true and display correct answer and send a post request to decrease enemy's points??. otherwise, set to !true and display wrong answer and send post request to decrease characters points
-
-//update this Link location to the map once we have that page
