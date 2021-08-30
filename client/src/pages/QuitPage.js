@@ -4,10 +4,13 @@ import { Link } from "react-router-dom";
 // import { QUERY_PROFILES } from "../utils/queries";
 import StatsCards from "../components/stats/statsCards";
 
+const removeCharacterLocalStorage = () => {
+  localStorage.removeItem("character_id");
+};
+
 const QuitPage = () => {
   // const { loading, data } = useQuery(QUERY_PROFILES);
   // const profiles = data?.profiles || [];
-  localStorage.removeItem("character_id");
   return (
     <>
       <div className="QuitGameDiv">
@@ -18,7 +21,12 @@ const QuitPage = () => {
         </div>
         <div className="startNewGameDiv">
           <Link to="/">
-            <button className="startNewGame">Go back to homepage</button>
+            <button
+              className="startNewGame"
+              onClick={removeCharacterLocalStorage}
+            >
+              Go back to homepage
+            </button>
           </Link>
         </div>
       </div>

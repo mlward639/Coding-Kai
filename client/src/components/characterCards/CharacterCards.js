@@ -35,6 +35,21 @@ let characters2 = [
   },
 ];
 
+function resumeGame(event) {
+  let resumeGameBtn = document.querySelector(".resumeGame");
+  resumeGameBtn = event.target;
+  const resumeGameBtnValue = resumeGameBtn.value; //getting the first buttons value no matter which you click
+  console.log("hereeee", resumeGameBtnValue);
+  localStorage.setItem("character_id", JSON.stringify(resumeGameBtnValue));
+}
+
+async function deleteGame() {
+  console.log("deleting game");
+  let _id = JSON.parse(localStorage.getItem("character_id"));
+  await axios.delete("/DELETE ROUTE PENDING/_id");
+  console.log("deleted game");
+} //TEST ONCE HAVE ROUTE
+
 const CharacterCards = () => {
   // characterHandler();
   // console.log("*", characters);
@@ -105,20 +120,15 @@ const CharacterCards = () => {
           </Link>
 
           <Link to="/">
-            <button className="deleteGame">Delete Game</button>
+            <button className="deleteGame" onClick={deleteGame}>
+              Delete Game
+            </button>
           </Link>
         </div>
       </div>
     </>
   ));
 };
-
-function resumeGame() {
-  const resumeGameBtn = document.querySelector(".resumeGame");
-  const resumeGameBtnValue = resumeGameBtn.value;
-  console.log("hereeee", resumeGameBtnValue);
-  localStorage.setItem("character_id", JSON.stringify(resumeGameBtnValue));
-}
 
 //on click (resume game), needs to store the character._id so we can access it to send put requests to update score. maybe store in local storage??
 //on click (delete game), needs to send axios delete to an API delete route that will delete the character

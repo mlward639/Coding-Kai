@@ -29,4 +29,6 @@ const Homepage = () => {
 
 export default Homepage;
 
+//START NEW GAME!!! NEED TO DOOOOO! ****** !!!!!!
+
 //DO WE WANT A SELECT CHARACTER PAGE (so when they click start new game, it takes them to select character page)?? Or just randomly assign them a character??
