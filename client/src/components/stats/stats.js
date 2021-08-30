@@ -9,7 +9,7 @@ const character =
     id: uuidv4(),
     name: "Test Character",
     img: TestImg,
-    HP: 10,
+    hitPoints: 10,
     attack: 1,
     experience: 5,
     level: 2,
@@ -44,7 +44,7 @@ const Stats = () => {
           {currentCharacter.name}
         </h1>
         <p className="font-semibold text-xl text-gray-500 characterHP">
-          HP: {currentCharacter.HP}
+          HP: {currentCharacter.hitPoints}
         </p>
         <p className="font-semibold text-xl text-gray-500 characterAttack">
           Attack: {currentCharacter.attack}

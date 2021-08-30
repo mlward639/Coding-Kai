@@ -24,7 +24,7 @@ const Stats2 = () => {
             {currentCharacter.name}
           </h1>
           <p className="font-semibold text-xl text-gray-500 characterHP3">
-            HP: {currentCharacter.HP}
+            HP: {currentCharacter.hitPoints}
           </p>
           <p className="font-semibold text-xl text-gray-500 characterAttack3">
             Attack: {currentCharacter.attack}

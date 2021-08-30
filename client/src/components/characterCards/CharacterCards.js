@@ -4,13 +4,14 @@ import TestImg from "../../images/test-character.png";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+
 let characters2 = [
   //update with get request data from mongo db
   {
     id: uuidv4(),
     name: "Test Character",
     img: TestImg,
-    HP: 10,
+    hitPoints: 10,
     attack: 1,
     experience: 5,
     level: 2,
@@ -19,7 +20,7 @@ let characters2 = [
     id: uuidv4(),
     name: "Test Character",
     img: TestImg,
-    HP: 10,
+    hitPoints: 10,
     attack: 1,
     experience: 5,
     level: 2,
@@ -28,7 +29,7 @@ let characters2 = [
     id: uuidv4(),
     name: "Test Character",
     img: TestImg,
-    HP: 10,
+    hitPoints: 10,
     attack: 1,
     experience: 5,
     level: 2,
@@ -57,12 +58,13 @@ const CharacterCards = () => {
   const [GetCharacters, setGetCharacters] = useState([]);
   console.log("still working");
   // characters = []; ***empty page if uncomment. then delete again and it correctly loads data. otherwise it wont load data  ask saturday!!!!!
+  let userid = "";
   useEffect(() => {
     let userid = ""; //need to dynamically update this based on logged in user ***
     console.log("use effect ran");
-    axios.get(`/getUsers`).then((response) => {
+    axios.get("/getUsers").then((response) => {
       userid = response.data[0]._id;
-      
+      // let userid = "612c8363094d0e5d58d38c93"; //need to dynamically update this based on logged in user ***
       axios.get(`/api/character/user/${userid}`).then((response) => {
         console.log("1", response.data);
         const test = response.data;
@@ -100,7 +102,7 @@ const CharacterCards = () => {
             {character.name}
           </h1>
           <p className="font-semibold text-xl text-gray-500 characterHP2">
-            HP: {character.hitPoints}
+            hitPoints: {character.hitPoints}
           </p>
           <p className="font-semibold text-xl text-gray-500 characterAttack2">
             Attack: {character.attack}
