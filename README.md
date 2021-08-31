@@ -4,8 +4,7 @@
 
 ## Description
 
-Do you like fun online games? Do you like martial arts? Do you want to improve your coding skills? Then check out Coding Kai!
-Coding Kai is a 2D RPG allowing characters to interact in each level and overcome obstacles by answering coding questions to make progress in the game.
+Do you like fun online games? Do you like martial arts? Do you want to improve your coding skills? Then check out Coding Kai! Coding Kai is a 2D RPG allowing characters to interact with enemies in each level and overcome them by answering coding questions to make progress in the game.
 
 ## User Story
 
@@ -20,13 +19,13 @@ Coding Kai is a 2D RPG allowing characters to interact in each level and overcom
 - THEN I am greeted with a login page
 - WHEN I sign in to the application
 - THEN I am brought to the homescreen can choose to begin when I left off or restart
-- WHEN I choose to restart
-- THEN my character data is reset
+- WHEN I choose to delete character
+- THEN my character data is deleted
 - WHEN I choose to start the game where I left off
 - THEN I reload onto the map where I left off
 - WHEN I am beginning a new game
 - THEN I am greeted with an initial story
-- WHEN I input preset commands on the keyboard (such as arrow keys or wasd or a menu keystroke TBD)
+- WHEN I input preset commands on the keyboard (such as arrow keys or wasd to move or a pause keystroke with spacebar)
 - THEN I am able to move my character sprite around or access the menu
 - WHEN I am on the menu screen
 - THEN I am shown options to unpause or to exit game
@@ -35,17 +34,18 @@ Coding Kai is a 2D RPG allowing characters to interact in each level and overcom
 - WHEN I unpause the game
 - THEN the menu screen goes away and I am back on the map in the same position
 - WHEN I ‘touch’ an enemy sprite
-- THEN I can use ‘enter’ to attack the enemy
+- THEN I can use ‘enter’ twice to attack the enemy
 - WHEN I attack the enemy
 - THEN a coding question appears
 - WHEN I answer a coding question correctly
 - THEN I decrease the enemy’s Health Points by my attack
 - WHEN I answer the question incorrectly
 - THEN I have my Health Point (HP) decreased by the enemies attack
-  -WHEN I have my HP decreased to zero
-  -THEN I am defeated and ‘respawn’ at the same level with the same stats
+- WHEN I have my HP decreased to zero
+- THEN I am defeated and and must create a new character
 - WHEN I ‘defeat’ an enemy
 - THEN the character is granted ‘experience’ towards leveling up
+The following will be implemented later...
 - WHEN I ‘level up’
 - THEN I am granted an increase to combat stats
 - WHEN I reach a certain character level
@@ -72,7 +72,7 @@ On page load, you can login or signup to create a new account. Once logged in, y
 
 ## Credits
 
-Libraries:
+Libraries and Sources:
 
 - Node.js and Express.js: RESTful API
 - Express-session and connect-session-sequelize: authentication ----------jsonwebtoken
@@ -83,7 +83,8 @@ Libraries:
 - Bcrypt: hash password
 - Path: working with file and directory paths
 - Wireframe cc: create wireframes
-- Tailwinds: CSS framework
+- Tailwinds: CSS 
+- Canvas API: used to render tilemap
 - Eslint, prettier: formatting
 - QuizAPI: coding questions
 - OpenGameArt: sprites
