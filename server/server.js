@@ -31,19 +31,28 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public'))); // are we using a public folder or client folder??
 
-mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/CodingKai',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-  },
-);
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/CodingKai', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+});
+
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static(path.join(__dirname, '../client/build')));
+// }
 
 if (process.env.NODE_ENV === 'production') {
+  // Set the static assets folder (ie, client build)
   app.use(express.static(path.join(__dirname, '../client/build')));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
 }
+
+// app.get('/*', (req, res) => {
+//   res.sendFile(path.resolve(__dirname + '/client/build/index.html'));
+// });
 
 // routes
 app.use(routes);
