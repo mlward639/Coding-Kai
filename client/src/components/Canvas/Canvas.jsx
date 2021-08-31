@@ -100,30 +100,31 @@ const enemiesList = indexes.map(function(index){
 
   return (
       <>
-  <div style={{display:'flex', flexDirection:'row', alignItems: 'center' }}>
+      <div className="gameBox">
+  <div className="otherGameContainer" style={{display:'flex', alignItems: 'center' }}>
   <div className="gameMap">
             <canvas width='640' height='640' ref={canvasRef} {...props}/>
       <Player skin="m2"/>
       {enemiesList}
      
   </div>
-  <div style={{display:'flex', flexDirection:'column', alignItems: 'center', justifyContent: 'center', marginLeft: "-320px"}}>
+  <div style={{display:'flex', flexDirection:'column', alignItems: 'center', justifyContent: 'center', marginLeft: "-490px"}}>
   <div className="stats2Div" style={{color:'white', minWidth: "320px", minHeight: '320px'}}>
     {/* this is where the stats $ directions container will go to RIGHT*/}
     <Stats2 />
   </div>
   <div className="border-2 border-gray-500 instructions" style={{color:'white', minWidth: "320px", minHeight: '320px'}}>
     <p>Use the arrow keys to move around the map</p>
-  <i className="far fa-arrow-alt-circle-up">Up</i>
-  <i className="far fa-arrow-alt-circle-down">Down</i>
-  <i className="far fa-arrow-alt-circle-right">Right</i>
-  <i className="far fa-arrow-alt-circle-left">Left</i>
+  <i className="far fa-arrow-alt-circle-up mapIcons">Up</i>
+  <i className="far fa-arrow-alt-circle-down mapIcons">Down</i>
+  <i className="far fa-arrow-alt-circle-right mapIcons">Right</i>
+  <i className="far fa-arrow-alt-circle-left mapIcons">Left</i>
   <p>Press the spacebar to pause game and view menu screen</p>
   <p>When in front of an enemy, press the enter button twice to fight them.</p>        
            </div>
        </div>
   </div>
-
+    </div>
   
   </>
   )}

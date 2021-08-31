@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
 
-// const coord = React.createContext(null)
-// {x: -640, y: -304}
-
-
+//pulls the position for the Player component
 const getX = JSON.parse(localStorage.getItem('coordX'));
 const getY = JSON.parse(localStorage.getItem('coordY'));
 let coord = {
@@ -20,7 +17,7 @@ export default function useWalk(maxSteps) {
   const [fresh, setFresh] = useState(true);
 
  
-
+// passes the position of the Player component
   useEffect(() => {
     if (fresh){
       setPosition(coord);
@@ -28,12 +25,7 @@ export default function useWalk(maxSteps) {
     }
   }, [])
 
-  
-
-
-
-  
-
+//allows us to utilize the spritesheet states
   const directions = {
     down: 0,
     left: 1,
@@ -44,7 +36,7 @@ export default function useWalk(maxSteps) {
     s: 0,
     d: 2,
   };
-
+// amount of pixels the Player will move
   const stepSize = 32;
 
   const modifier = {
@@ -57,19 +49,14 @@ export default function useWalk(maxSteps) {
     d: { x: stepSize, y: 0 },
     w: { x: 0, y: -stepSize },
   };
-  // This function will become the enemy encounter function
+  // This function is the enemy encounter function
   function checkTouching() {
     localStorage.setItem('coordX', position.x,);
     localStorage.setItem('coordY', position.y);
     window.location.href = "/fight";
   }
 
-  function pausePageGame() {
-    localStorage.setItem('coordX', position.x,);
-    localStorage.setItem('coordY', position.y);
-    window.location.href = "/pause";
-  }
-
+  //does the walking animation using the spritesheet
   function walk(dir) {
     setDir((prev) => {
       if (directions[dir] === prev) move(dir);
@@ -411,7 +398,7 @@ export default function useWalk(maxSteps) {
     }
     // pauses
       else if (dir==="spacebar"){
-        pausePageGame();
+        
         return
       }
   

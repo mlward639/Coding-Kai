@@ -1,6 +1,11 @@
 /* * {
   pi
 } */
+#root{
+  margin:0;
+  padding:0
+}
+
 
 :root {
   --darkGray: rgb(22, 22, 22);
@@ -363,9 +368,9 @@ body {
 }
 
 .storyDescContainer p {
+  font-size: 1.5em;
   color: white;
-  padding: 15px;
-  font-size: 24px;
+  padding: 45px;
 }
 
 .storyNextBtn {

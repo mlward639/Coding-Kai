@@ -21,7 +21,7 @@ import LosePage from "./pages/LosePage";
 export default function App() {
   return (
     <Router>
-      <div className="container">
+      {/* <div className="container"> */}
         <Switch>
           <Route exact path="/">
             <Homepage />
@@ -66,7 +66,7 @@ export default function App() {
             <LosePage />
           </Route>
         </Switch>
-      </div>
+      {/* </div> */}
     </Router>
   );
 }
