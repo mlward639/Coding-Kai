@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect } from 'react';
+import React from 'react';
 import Actor from '../actor';
 import useKeyPress from '../../hooks/use-key-press';
 import useWalk from '../../hooks/use-walk';
@@ -14,7 +14,6 @@ export default function Player ({ skin }) {
       function pausePageGame() {
         localStorage.setItem('coordX', position.x,);
         localStorage.setItem('coordY', position.y);
-        console.log("strufbnfnf");
         window.location.href = "/pause";
       }
     
@@ -24,10 +23,8 @@ export default function Player ({ skin }) {
           walk(e.key.replace("Arrow", "").toLowerCase());
           }
           else if(e.code==="Space"){
-
             pausePageGame();
           }
-          
           else {
             return
           }

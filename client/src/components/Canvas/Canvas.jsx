@@ -109,7 +109,7 @@ const enemiesList = indexes.map(function(index){
      
   </div>
   <div style={{display:'flex', flexDirection:'column', alignItems: 'center', justifyContent: 'center', marginLeft: "-490px"}}>
-  <div className="stats2Div" style={{color:'white', minWidth: "320px", minHeight: '320px'}}>
+  <div className="stats2Div" style={{color:'white', minWidth: "320px", minHeight: '320px', marginTop:'50px'}}>
     {/* this is where the stats $ directions container will go to RIGHT*/}
     <Stats2 />
   </div>

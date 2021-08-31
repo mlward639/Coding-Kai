@@ -180,7 +180,7 @@ const QuestionFight = () => {
   };
   return (
     <>
-      <form action="#" className="w-full md:w-1/2 border p-6 questionForm">
+      <form action="#" className="w-full md:w-1/2 border p-6 questionForm" style={{color:'white'}}>
         <h2 className="text-2xl pb-3 font-semibold">
           Attack your enemy by answering correctly
         </h2>
