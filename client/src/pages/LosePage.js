@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import TestImg from "../images/test-character.png";
-
-import StatsCards from "../components/stats/statsCards";
 import Footer from "../components/authentication/footer";
 
 const removeCharacterLocalStorage = () => {
@@ -12,7 +10,7 @@ const removeCharacterLocalStorage = () => {
   localStorage.removeItem("coordY");
 };
 
-const QuitPage = () => {
+const LosePage = () => {
   const [currentCharacter, setCurrentCharacter] = useState("");
   let _id = JSON.parse(localStorage.getItem("character_id"));
   useEffect(() => {
@@ -27,9 +25,11 @@ const QuitPage = () => {
   return (
     <>
       <div className="QuitGameDiv">
-        <h1 className="quitPageTitle">Thanks for playing!</h1>
-        <h2 className="quitPageSubtitle">Your final score:</h2>
-        <div className="quitScores">
+        <h1 className="quitPageTitle losePageTitle">Sorry you lost!</h1>
+        <h2 className="quitPageSubtitle losePageSubtitle">
+          You need to brush up on your coding skills.
+        </h2>
+        <div className="quitScores loseScores">
           <div
             className="statsCard3 max-h-screen relative  bg-white shadow-lg w-60 border-2 border-gray-500 flex items-center  flex-col"
             key={currentCharacter.id}
@@ -63,13 +63,13 @@ const QuitPage = () => {
             </div>
           </div>
         </div>
-        <div className="startNewGameDiv">
+        <div className="startNewGameDiv tryLuckDiv">
           <Link to="/">
             <button
-              className="startNewGame"
+              className="startNewGame tryLuck"
               onClick={removeCharacterLocalStorage}
             >
-              Go back to homepage
+              Try your luck again!
             </button>
           </Link>
         </div>
@@ -79,4 +79,4 @@ const QuitPage = () => {
   );
 };
 
-export default QuitPage;
+export default LosePage;

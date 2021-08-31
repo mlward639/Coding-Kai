@@ -15,6 +15,7 @@ import Canvas from "./components/Canvas/Canvas";
 import QuestionModalCorrect from "./components/fight/modalCorrect";
 import QuestionModalIncorrect from "./components/fight/modalWrong";
 import NewUser from "./pages/newUser";
+import LosePage from "./pages/LosePage";
 
 //routing NOT working
 export default function App() {
@@ -60,6 +61,9 @@ export default function App() {
           </Route>
           <Route path="/new">
             <NewUser />
+          </Route>
+          <Route path="/lose">
+            <LosePage />
           </Route>
         </Switch>
       {/* </div> */}

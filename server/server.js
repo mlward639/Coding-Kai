@@ -38,25 +38,20 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/CodingKai', {
   useFindAndModify: false,
 });
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
 // if (process.env.NODE_ENV === 'production') {
+//   // Set the static assets folder (ie, client build)
 //   app.use(express.static(path.join(__dirname, '../client/build')));
 // }
 
-if (process.env.NODE_ENV === 'production') {
-  // Set the static assets folder (ie, client build)
-  app.use(express.static(path.join(__dirname, '../client/build')));
-}
+// routes
+app.use(routes);
 
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/build/index.html'));
 });
-
-// app.get('/*', (req, res) => {
-//   res.sendFile(path.resolve(__dirname + '/client/build/index.html'));
-// });
-
-// routes
-app.use(routes);
 
 db.once('open', () => {
   app.listen(PORT, () => {

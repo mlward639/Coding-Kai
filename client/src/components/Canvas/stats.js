@@ -6,7 +6,7 @@ const Stats2 = () => {
   let _id = JSON.parse(localStorage.getItem("character_id"));
   useEffect(() => {
     axios.get(`/api/character/${_id}`).then((response) => {
-      console.log("***", response.data);
+      // console.log("***", response.data);
       setCurrentCharacter(response.data);
     });
     // .then(console.log("$$$$$$", setCurrentQuestion));

@@ -164,7 +164,8 @@ body {
   /* border: 2px solid blue; */
   width: 20%;
   display: inline;
-  font-size: 18px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .copyright {
@@ -177,6 +178,11 @@ body {
   margin-right: 50px;
   display: flex;
   justify-content: flex-end;
+}
+
+.meetTeamBtn {
+  font-weight: bold;
+  font-size: 24px;
 }
 
 /*HOMEPAGE*/
@@ -309,15 +315,24 @@ body {
   text-align: center;
 }
 
-.letsPlay {
+.letsPlay,
+.letsPlay2 {
   background-color: var(--hotPink);
   color: black;
   border-radius: 25px;
   padding: 7px;
-  padding-right: 40px;
-  padding-left: 40px;
+  padding-right: 15px;
+  padding-left: 15px;
   font-size: 30px;
   font-weight: bold;
+}
+
+.letsPlay {
+  margin-right: 10px;
+}
+
+.letsPlay2 {
+  margin-left: 10px;
 }
 
 /* STORY PAGE */
@@ -823,6 +838,23 @@ body {
   border-radius: 20px;
 }
 
+/* LOSE GAME */
+.losePageSubtitle {
+  margin-bottom: -50px;
+}
+
+.losePageTitle {
+  margin-bottom: 10px;
+}
+
+.loseScores {
+  margin-top: 0;
+}
+
+.tryLuckDiv {
+  margin-bottom: 120px;
+  /* border: 2px yellow solid; */
+}
 /* ----------------------------------- */
 
 /* additional media queries */
@@ -918,10 +950,4 @@ body {
   .storyDescContainer {
     margin-top: -55%;
   }
-}
-
-/*ADD MEDIA QUERIES for team page*/
-
-.test {
-  color: white;
 }
