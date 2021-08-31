@@ -21,7 +21,7 @@ const MeetTeamPage = () => {
         <p className="meetTeamP">
           We enjoyed the challenge of creating this game and utilizing multiple
           different technologies to showcase some of our newly acquired skills.
-          We hope you enjoy playing it as much as we enjoyed making it.{" "}
+          We hope you enjoy playing it as much as we enjoyed making it.
         </p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-x-10 xl-grid-cols-4 gap-y-10 gap-x-6 ">
           <CB />
