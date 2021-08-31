@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSkullCrossbones } from "@fortawesome/free-solid-svg-icons";
 
 const element = <FontAwesomeIcon icon={faSkullCrossbones} />;
 
 const QuestionModalIncorrect = () => {
+  const [currentCharacterHP, setCurrentCharacterHP] = useState("");
+  let _id = JSON.parse(localStorage.getItem("character_id"));
+  useEffect(() => {
+    axios.get(`/api/character/${_id}`).then((response) => {
+      console.log("***", response.data.hitPoints);
+      setCurrentCharacterHP(response.data.hitPoints);
+    });
+  }, []);
+  if (currentCharacterHP <= 0) {
+    console.log("you lost");
+    window.location.href = "/lose";
+  }
+
   return (
     <>
       <div

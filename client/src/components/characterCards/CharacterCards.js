@@ -39,16 +39,21 @@ let characters2 = [
 function resumeGame(event) {
   let resumeGameBtn = document.querySelector(".resumeGame");
   resumeGameBtn = event.target;
-  const resumeGameBtnValue = resumeGameBtn.value; //getting the first buttons value no matter which you click
+  const resumeGameBtnValue = resumeGameBtn.value;
   // console.log("hereeee", resumeGameBtnValue);
   localStorage.setItem("character_id", JSON.stringify(resumeGameBtnValue));
 }
 
-async function deleteGame() {
+async function deleteGame(event) {
+  let deleteGameBtn = document.querySelector(".deleteGame");
+  deleteGameBtn = event.target;
+  const deleteGameBtnValue = deleteGameBtn.value;
   console.log("deleting game");
-  let _id = JSON.parse(localStorage.getItem("character_id"));
+  let _id = deleteGameBtnValue;
+  console.log("yyyyy", _id);
   await axios.delete(`/api/character/${_id}`);
   console.log("deleted game");
+  document.location.reload();
 }
 
 const CharacterCards = () => {
@@ -116,7 +121,11 @@ const CharacterCards = () => {
           </Link>
 
           <Link to="/">
-            <button className="deleteGame" onClick={deleteGame}>
+            <button
+              className="deleteGame"
+              value={character._id}
+              onClick={deleteGame}
+            >
               Delete Game
             </button>
           </Link>

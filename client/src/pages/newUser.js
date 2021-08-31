@@ -27,37 +27,43 @@ const NewUser = () => {
     "Naruto",
   ];
   let randomNumber = Math.floor(Math.random() * characterNameArray.length);
-  const createNewCharacter = () => {
-    let index = randomNumber;
-    const newCharacter = {
-      user_id: ["6129095c379a40808472a82a"],
-      name: characterNameArray[index],
-      hitPoints: 25,
-      attack: 5,
-      experience: 0,
-      level: 1,
+  useEffect(() => {
+    // const [currentCharacter1, setCurrentCharacter1] = useState("");
+    const createNewCharacter = () => {
+      let index = randomNumber;
+      const newCharacter = {
+        user_id: ["6129095c379a40808472a82a"], //UPDATE ****
+        name: characterNameArray[index],
+        hitPoints: 25,
+        attack: 5,
+        experience: 0,
+        level: 1,
+      };
+      axios
+        .post("/api/character", newCharacter)
+        .then((response) => console.log(response.data));
+      let newCharacterUserId = newCharacter.user_id[0];
+      // localStorage.setItem("character_id", JSON.stringify(resumeGameBtnValue));
+      console.log(newCharacter);
+      let newCharacterName = newCharacter.name;
+      console.log(newCharacterName);
+      axios.get(`/api/character/name/${newCharacterName}`).then((response) => {
+        console.log("test", response.data);
+        let gotNewCharacter = response.data;
+        let gotNewCharacterId = gotNewCharacter._id;
+        console.log("$$$", gotNewCharacterId);
+        localStorage.setItem("character_id", JSON.stringify(gotNewCharacterId));
+      });
     };
-    axios
-      .post("/api/character", newCharacter)
-      .then((response) => console.log(response.data));
-    let newCharacterUserId = newCharacter.user_id[0];
-    // localStorage.setItem("character_id", JSON.stringify(resumeGameBtnValue));
-    console.log(newCharacter);
-    let newCharacterName = newCharacter.name;
-    console.log(newCharacterName);
-    axios.get(`/api/character/name/${newCharacterName}`).then((response) => {
-      console.log("test", response.data);
-      let gotNewCharacter = response.data;
-      let gotNewCharacterId = gotNewCharacter._id;
-      console.log("$$$", gotNewCharacterId);
-      localStorage.setItem("character_id", JSON.stringify(gotNewCharacterId));
-    });
-  };
-  createNewCharacter();
+    createNewCharacter();
+  }, []);
+
   const [currentCharacter, setCurrentCharacter] = useState("");
   let _id = JSON.parse(localStorage.getItem("character_id"));
+  console.log("WORK MF", _id);
   useEffect(() => {
     axios.get(`/api/character/${_id}`).then((response) => {
+      console.log("WORK MF", _id);
       console.log("***", response.data);
       setCurrentCharacter(response.data);
     });
@@ -100,7 +106,10 @@ const NewUser = () => {
         </div>
       </div>
       <div className="nextPageContainer">
-        <button className="letsPlay">
+        <button className="letsPlay" onClick={refreshFunction}>
+          <Link to="/new">Get a new character!</Link>
+        </button>
+        <button className="letsPlay2">
           <Link to="/story">Let's Play!</Link>
         </button>
       </div>
@@ -147,3 +156,7 @@ const NewUser = () => {
 };
 
 export default NewUser;
+
+function refreshFunction() {
+  return (window.location.href = window.location.href);
+}
