@@ -20,7 +20,7 @@ import NewUser from "./pages/newUser";
 export default function App() {
   return (
     <Router>
-      <div className="container">
+      {/* <div className="container"> */}
         <Switch>
           <Route exact path="/">
             <Homepage />
@@ -62,7 +62,7 @@ export default function App() {
             <NewUser />
           </Route>
         </Switch>
-      </div>
+      {/* </div> */}
     </Router>
   );
 }
