@@ -9,17 +9,21 @@ const element = <FontAwesomeIcon icon={faSkullCrossbones} />;
 const QuestionModalIncorrect = () => {
   const [currentCharacterHP, setCurrentCharacterHP] = useState("");
   let _id = JSON.parse(localStorage.getItem("character_id"));
-  useEffect(() => {
-    axios.get(`/api/character/${_id}`).then((response) => {
-      console.log("***", response.data.hitPoints);
-      setCurrentCharacterHP(response.data.hitPoints);
-    });
+  useEffect(async () => {
+    const res = await axios.get(`/api/character/${_id}`);
+    console.log("***", res.data.hitPoints);
+    await setCurrentCharacterHP(res.data.hitPoints);
   }, []);
-  if (currentCharacterHP <= 0) {
-    console.log("you lost");
-    window.location.href = "/lose";
-  }
 
+  function please() {
+    if (currentCharacterHP <= 0) {
+      console.log("you lost");
+      window.location.href = "/lose";
+    } else {
+      console.log("nah");
+      window.location.href = "/game";
+    }
+  }
   return (
     <>
       <div
@@ -38,11 +42,14 @@ const QuestionModalIncorrect = () => {
               </p>
             </div>
             <div className="p-3  mt-2 text-center space-x-4 md:block">
-              <Link to="/game">
-                <button className="mb-2 md:mb-0 border border-red-500 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg congratsReturnBtn">
-                  Return to the Game
-                </button>
-              </Link>
+              {/* <Link to="/game"> */}
+              <button
+                className="mb-2 md:mb-0 border border-red-500 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg congratsReturnBtn"
+                onClick={please}
+              >
+                Return to the Game
+              </button>
+              {/* </Link> */}
             </div>
           </div>
         </div>
