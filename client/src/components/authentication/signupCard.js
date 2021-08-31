@@ -40,7 +40,7 @@ const SignupCard = () => {
                 <label className="passwordSignupLabel">
                   Password:
                   <input
-                    type="text"
+                    type="password"
                     className="passwordSignupInput"
                     placeholder="password"
                   />
@@ -50,19 +50,21 @@ const SignupCard = () => {
                 <label className="confirmSignupLabel">
                   Confirm:
                   <input
-                    type="text"
+                    type="password"
                     className="confirmSignupInput"
                     placeholder="password"
                   />
                 </label>
               </div>
               <div className="w-full pt-3 submitBtnDiv">
-                <button
-                  type="submit"
-                  className="w-full px-4 py-2 transition duration-50 focus:outline-none font-semibold hover:text-white text-xl cursor-pointer submitSignupBtn"
-                >
-                  Submit
-                </button>
+                <Link to="/">
+                  <button
+                    type="submit"
+                    className="w-full px-4 py-2 transition duration-50 focus:outline-none font-semibold hover:text-white text-xl cursor-pointer submitSignupBtn"
+                  >
+                    Submit
+                  </button>
+                </Link>
               </div>
               <Link to="/login">
                 <div className="loginInstead">

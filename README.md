@@ -45,7 +45,7 @@ Do you like fun online games? Do you like martial arts? Do you want to improve y
 - THEN I am defeated and and must create a new character
 - WHEN I ‘defeat’ an enemy
 - THEN the character is granted ‘experience’ towards leveling up
-The following will be implemented later...
+- The following will be implemented later...
 - WHEN I ‘level up’
 - THEN I am granted an increase to combat stats
 - WHEN I reach a certain character level
@@ -83,7 +83,7 @@ Libraries and Sources:
 - Bcrypt: hash password
 - Path: working with file and directory paths
 - Wireframe cc: create wireframes
-- Tailwinds: CSS 
+- Tailwinds: CSS
 - Canvas API: used to render tilemap
 - Eslint, prettier: formatting
 - QuizAPI: coding questions
@@ -116,13 +116,41 @@ Source for licensing information: <a href="https://opensource.org/licenses/MIT">
 
 ## Screenshots
 
-Screenshot of
+Screenshot of Sign Up Page:
 
-<img src='#' alt = 'Screenshot of '>
+<img src='client/src/images/screenshot-signup.png' alt = 'Screenshot of signup page'>
+
+Screenshot of Homepage:
+
+<img src='client/src/images/screenshot-homepage.png' alt = 'Screenshot of homepage'>
+
+Screenshot of Game Page:
+
+<img src='client/src/images/screenshot-game.png' alt = 'Screenshot of game page'>
+
+Screenshot of Fight Page:
+
+<img src='client/src/images/screenshot-fight.png' alt = 'Screenshot of fight page'>
+
+Screenshot of Question Page:
+
+<img src='client/src/images/screenshot-question.png' alt = 'Screenshot of question page'>
+
+Screenshot of Pause Page:
+
+<img src='client/src/images/screenshot-pause.png' alt = 'Screenshot of pause page'>
+
+Screenshot of Quit Page:
+
+<img src='client/src/images/screenshot-quit.png' alt = 'Screenshot of quit page'>
+
+Screenshot of Meet Page:
+
+<img src='client/src/images/screenshot-meet.png' alt = 'Screenshot of game page'>
 
 ## URLs
 
-<a href="https://github.com/mlward639/Coding-Kai">Link to GitHub Repository</a> UPDATE LINK WHEN NAME CHANGES
+<a href="https://github.com/mlward639/Coding-Kai">Link to GitHub Repository</a>
 
 <a href="https://shrouded-temple-97141.herokuapp.com/">Link to Deployed Application</a>
 
