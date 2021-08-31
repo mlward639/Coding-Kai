@@ -16,7 +16,7 @@ const Stats2 = () => {
   return (
     <>
       <div
-        className="statsCard2 max-h-screen relative  bg-white shadow-lg w-60 border-2 border-gray-500 flex items-center  flex-col" style={{background:'blue'}}
+        className="statsCard2 relative shadow-lg w-60 border-2 border-gray-500 flex items-center  flex-col"
         key={currentCharacter.id}
         
       >

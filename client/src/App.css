@@ -118,20 +118,21 @@ body {
 
 .footerContainer {
   color: white;
-  border: 2px solid tan;
+  /* border: 2px solid tan; */
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
+/* MAKE AT BOTTOM */
 
 .headerContainer {
-  border: 2px solid tan;
+  /* border: 2px solid tan; */
   display: block;
   text-align: center;
 }
 
 .ninjaImgDiv {
-  border: 2px solid brown;
+  /* border: 2px solid brown; */
   width: 100%;
   display: flex;
   justify-content: center;
@@ -146,7 +147,7 @@ body {
 
 .headerText {
   color: var(--hotPink);
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
 }
 
 .headerTitle {
@@ -160,7 +161,7 @@ body {
 
 .meetTeam,
 .copyright {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   width: 20%;
   display: inline;
   font-size: 18px;
@@ -268,7 +269,7 @@ body {
 }
 
 .container {
-  border: solid 2px green;
+  /* border: solid 2px green; */
   width: 100vw; /*whjy isnt it equal to the width of screen and image???*/
   height: 100vh;
 }
@@ -345,7 +346,7 @@ body {
   /* border: 2px solid blue; */
   margin-top: -15%;
   display: flex;
-  background-color: rgb(22, 22, 22, 0.85);
+  background-color: rgba(22, 22, 22, 0.885);
   z-index: 1;
   margin-left: 10px;
   width: 100%;
@@ -363,7 +364,7 @@ body {
   padding: 7px;
   padding-right: 15px;
   padding-left: 15px;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
 }
 
@@ -520,13 +521,6 @@ body {
   margin-top: 2px;
   font-size: 20px;
   font-weight: bold;
-}
-
-.healthBar,
-.enemyHealthBar {
-  border: 2px solid green;
-  background-color: green;
-  margin-top: 10px;
 }
 
 .enemyStats,
@@ -747,7 +741,13 @@ body {
   /* border: 2px solid orange; */
   display: flex;
   justify-content: center;
-  margin-top: 45px;
+  margin-top: -25px;
+}
+
+.quitFooter {
+  margin-top: 50px;
+  position: absolute;
+  bottom: 0;
 }
 
 .startNewGameDiv {
@@ -757,6 +757,74 @@ body {
   margin-top: 25px;
 }
 
+/*MEET TEAM PAGE*/
+.MeetTeamPageContainer {
+  /* border: 2px solid orange; */
+  /* background-color: black; */
+  width: 100vw;
+  height: 150vh;
+}
+
+.meetTeamTitle {
+  color: black;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.meetTeamP {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.CB,
+.ZK,
+.JR,
+.MW {
+  /* border: 2px solid orange; */
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+}
+
+.profilePic {
+  height: auto;
+}
+
+.teamSubtitle {
+  font-style: italic;
+}
+
+.contact-item {
+  display: inline;
+  margin-right: 10px;
+  font-size: 30px;
+}
+
+.meetReturn {
+  /* background-color: white; */
+  width: 100vw;
+  height: 30px;
+  /* border: 2px solid pink; */
+  display: flex;
+  justify-content: center;
+  margin-top: -60px;
+}
+
+.meetReturnBtn {
+  background-color: black;
+  color: rgba(243, 244, 246);
+  font-size: 22px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+/* ----------------------------------- */
+
 /* additional media queries */
 @media screen and (max-width: 992px) {
   /*homepage*/
@@ -764,6 +832,11 @@ body {
   .deleteGame {
     display: flex;
     justify-content: center;
+  }
+
+  .MeetTeamPageContainer {
+    width: 100vw;
+    height: 280vh;
   }
 }
 
@@ -798,6 +871,20 @@ body {
    visibility: hidden; 
     border: 2px solid pink;
   } COME BACK TO THIS SHIT *** */
+
+  .MeetTeamPageContainer {
+    /* border: 2px solid orange; */
+    /* background-color: black; */
+    width: 100vw;
+    height: 500vh;
+  }
+  .meetTeamTitle {
+    font-size: 30x;
+  }
+
+  .meetTeamP {
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -832,47 +919,7 @@ body {
     margin-top: -55%;
   }
 }
-/*MEET TEAM PAGE*/
-.MeetTeamPageContainer {
-  border: 2px solid white;
-  /* background-color: black; */
-  width: 100vw;
-}
 
-.meetTeamTitle {
-  color: black;
-  text-align: center;
-  font-size: 36px;
-  font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-
-.CB,
-.ZK,
-.JR,
-.MW {
-  border: 2px solid orange;
-  width: 100%;
-}
-
-.profilePic {
-  height: auto;
-}
-
-.teamSubtitle {
-  font-style: italic;
-}
-
-.contact-item {
-  display: inline;
-  margin-right: 10px;
-  font-size: 30px;
-}
-
-.meetReturnBtn {
-  background-color: white;
-}
 /*ADD MEDIA QUERIES for team page*/
 
 .test {

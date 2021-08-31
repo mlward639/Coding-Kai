@@ -109,16 +109,16 @@ const enemiesList = indexes.map(function(index){
      
   </div>
   <div style={{display:'flex', flexDirection:'column', alignItems: 'center', justifyContent: 'center', marginLeft: "-490px"}}>
-  <div style={{display:"flex", alignItems:"center", color:'black', minWidth: "320px", minHeight: '320px'}}>
+  <div className="stats2Div" style={{color:'white', minWidth: "320px", minHeight: '320px'}}>
     {/* this is where the stats $ directions container will go to RIGHT*/}
     <Stats2 />
   </div>
   <div className="border-2 border-gray-500 instructions" style={{color:'white', minWidth: "320px", minHeight: '320px'}}>
     <p>Use the arrow keys to move around the map</p>
-  <i className="far fa-arrow-alt-circle-up mapIcons">Up </i>
-  <i className="far fa-arrow-alt-circle-down mapIcons">Down </i>
-  <i className="far fa-arrow-alt-circle-right mapIcons">Right </i>
-  <i className="far fa-arrow-alt-circle-left mapIcons">Left </i>
+  <i className="far fa-arrow-alt-circle-up mapIcons">Up</i>
+  <i className="far fa-arrow-alt-circle-down mapIcons">Down</i>
+  <i className="far fa-arrow-alt-circle-right mapIcons">Right</i>
+  <i className="far fa-arrow-alt-circle-left mapIcons">Left</i>
   <p>Press the spacebar to pause game and view menu screen</p>
   <p>When in front of an enemy, press the enter button twice to fight them.</p>        
            </div>

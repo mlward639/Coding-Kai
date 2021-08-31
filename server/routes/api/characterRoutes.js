@@ -90,12 +90,14 @@ router.put('/:id', async (req, res) => {
 
     const updatedData = characterData;
 
-    if (req.body.changedHitPoints) {
-      updatedData.hitPoints += req.body.changedHitPoints;
+    if (req.body.changeHitPoints) {
+      updatedData.hitPoints += req.body.changeHitPoints;
+      console.log('hereeeee');
     }
 
-    if (req.body.changedExperience) {
-      updatedData.experience += req.body.changedExperience;
+    if (req.body.changeExperience) {
+      updatedData.experience += req.body.changeExperience;
+      console.log('thereeee');
     }
 
     await Character.findOneAndUpdate({ _id: req.params.id }, updatedData);
