@@ -53,27 +53,20 @@ async function deleteGame() {
 const CharacterCards = () => {
   // characterHandler();
   // console.log("*", characters);
-  // console.log("&", characters2);
+  console.log("&", characters2);
   const [GetCharacters, setGetCharacters] = useState([]);
-  // console.log("still working");
+  console.log("still working");
   // characters = []; ***empty page if uncomment. then delete again and it correctly loads data. otherwise it wont load data  ask saturday!!!!!
   let userid = "";
   useEffect(() => {
     let userid = ""; //need to dynamically update this based on logged in user ***
     console.log("use effect ran");
-    console.log("userid1", userid);
     axios.get("/getUsers").then((response) => {
-      console.log("response1", response);
-      console.log("response.data1", response.data);
-      console.log("response.data01", response.data[0]);
-      console.log("response.data.0.id1", response.data[0]._id);
       userid = response.data[0]._id;
-      console.log("userid2", userid);
       // let userid = "612c8363094d0e5d58d38c93"; //need to dynamically update this based on logged in user ***
       axios.get(`/api/character/user/${userid}`).then((response) => {
         console.log("1", response.data);
         const test = response.data;
-        console.log("test", test);
         setGetCharacters(test);
         console.log("2", test);
         console.log("22", GetCharacters);
@@ -90,7 +83,6 @@ const CharacterCards = () => {
   //     {console.log(`^^^^${GetCharacters}`)}
   //   </div>
   // );
-  console.log("get characters", GetCharacters);
   return GetCharacters.map((character) => (
     <>
       <div
