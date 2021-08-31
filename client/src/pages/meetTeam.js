@@ -8,22 +8,9 @@ import MW from "../components/team/MW";
 const MeetTeamPage = () => {
   return (
     <>
-      <div class="bg-gray-100 min-h-screen px-10 MeetTeamPageContainer">
+      <div className="bg-gray-100 min-h-screen px-10 MeetTeamPageContainer">
         <h1 className="meetTeamTitle">Meet our team...</h1>
-        <svg
-          width="350"
-          height="71"
-          viewBox="0 0 350 71"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg%22%3E"
-        >
-          <path
-            d="M1 68.5203C115.833 28.5203 346 -35.1797 348 30.0203"
-            stroke="#0EB4E8"
-            stroke-width="4"
-          />
-        </svg>
-        <p>
+        <p className="meetTeamP">
           We hope you enjoyed our game. We created this game as our final
           project for the Georgia Tech Coding Boot Camp for which we all
           received our Full Stack Developer Certificate from Georgia Tech.
@@ -31,7 +18,7 @@ const MeetTeamPage = () => {
           Apps, Agile Methodology, Bootstrap, React.js, Express.js,
           Node.js,MongoDB, MySQL, Command Line, and Git.
         </p>
-        <p>
+        <p className="meetTeamP">
           We enjoyed the challenge of creating this game and utilizing multiple
           different technologies to showcase some of our newly acquired skills.
           We hope you enjoy playing it as much as we enjoyed making it.{" "}
@@ -44,7 +31,9 @@ const MeetTeamPage = () => {
         </div>
       </div>
       <div className="meetReturn">
-        <button className="meetReturnBtn">Return to homepage</button>
+        <Link to="/">
+          <button className="meetReturnBtn">Return to homepage</button>
+        </Link>
       </div>
     </>
   );
