@@ -9,7 +9,7 @@ import Footer from "../components/authentication/footer";
 const removeCharacterLocalStorage = () => {
   localStorage.removeItem("character_id");
   localStorage.removeItem("coordX");
-  localStorage.removeItem("coordY"); //COME BACK TO *****
+  localStorage.removeItem("coordY");
 };
 
 const QuitPage = () => {

@@ -32,7 +32,7 @@ const NewUser = () => {
     const newCharacter = {
       user_id: ["6129095c379a40808472a82a"],
       name: characterNameArray[index],
-      hitPoints: 5,
+      hitPoints: 25,
       attack: 5,
       experience: 0,
       level: 1,

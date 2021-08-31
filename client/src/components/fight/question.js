@@ -103,8 +103,6 @@ const QuestionFight = () => {
   // console.log("^^^^", currentQuestion.answers.answer_a);
   // console.log("here", optA.type);
   function getChosenAnswer() {
-    console.log("fucker");
-
     for (let i = 0, length = radios.length; i < length; i++) {
       if (radios[i].checked) {
         console.log("888888", radios[i].value);
@@ -124,11 +122,12 @@ const QuestionFight = () => {
     let _id = JSON.parse(localStorage.getItem("character_id"));
     const res = await axios
       .put(`/api/character/${_id}`, {
-        changeExperience: 10, //+ VALUE OF ENEMY.ATTACK. NEED FUNCTION ON BACK END ADDING THIS VALUE TO THE CURRENT VALUE
+        changeExperience: 5, //+ VALUE OF ENEMY.ATTACK. NEED FUNCTION ON BACK END ADDING THIS VALUE TO THE CURRENT VALUE
       })
       .then((response) => {
         console.log(response.data, "look here");
       });
+    window.location.href = "/correct";
     // const res2 = await axios
     //   .put("NEED ENEMY PUT ROUTE", {
     //     changeHitPoints: -10, // - character.attack, then needs backend functionality to update
@@ -149,11 +148,13 @@ const QuestionFight = () => {
 
     const res = await axios
       .put(`/api/character/${_id}`, {
-        changeHitPoints: -10, //- VALUE OF ENEMY.ATTACK. NEED FUNCTION ON BACK END ADDING THIS VALUE TO THE CURRENT VALUE
+        changeHitPoints: -5, //- VALUE OF ENEMY.ATTACK. NEED FUNCTION ON BACK END ADDING THIS VALUE TO THE CURRENT VALUE
       })
       .then((response) => {
         console.log(response.data, "look here");
+        window.location.href = "/wrong";
       });
+
     // const res2 = await axios
     //   .put("NEED ENEMY PUT ROUTE", {
     //     attack: 10, // + character.attack, then needs backend functionality to update

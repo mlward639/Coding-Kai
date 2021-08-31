@@ -1,7 +1,7 @@
 [
     {
       "name": "Hawk",
-      "hitPoints": 10,
+      "hitPoints": 35,
       "attack": 1,
       "experience": 5,
       "level": 2

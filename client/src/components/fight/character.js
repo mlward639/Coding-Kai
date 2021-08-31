@@ -5,6 +5,7 @@ import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import TestImg from "../../images/test-character.png";
 
+//Testing purposes
 // const character =
 //   //update with get request data from mongo db
 //   {
@@ -22,9 +23,9 @@ const CharacterFight = () => {
   let _id = JSON.parse(localStorage.getItem("character_id"));
   useEffect(() => {
     axios.get(`/api/character/${_id}`).then((response) => {
-      console.log("1111111", response.data);
+      // console.log("1111111", response.data);
       setCurrentCharacter(response.data);
-      console.log("222222", currentCharacter.name);
+      // console.log("222222", currentCharacter.name);
     });
     // .then(console.log("$$$$$$", setCurrentQuestion));
   }, []);
@@ -35,9 +36,6 @@ const CharacterFight = () => {
         <div className="characterFightImgDiv">
           <img src={TestImg} className="characterFightImg" />
         </div>
-        {/*UPDATE IMAGE BASED ON CHARACTER... think id need to store a url for each character in the db. then can pull the url here to get pic. *** !!! }
-        {/* <div className="healthBar">health bar goes here</div>
-      </div> CREATE IF TIME *** !!!! */}
         <div className="characterStats">
           <div className="characterHP">HP: {currentCharacter.hitPoints}</div>
           <div className="characterAttack">

@@ -4,6 +4,7 @@ import TestImg from "../../images/test-character.png";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+//testing purposes
 let characters2 = [
   //update with get request data from mongo db
   {
@@ -39,50 +40,40 @@ function resumeGame(event) {
   let resumeGameBtn = document.querySelector(".resumeGame");
   resumeGameBtn = event.target;
   const resumeGameBtnValue = resumeGameBtn.value; //getting the first buttons value no matter which you click
-  console.log("hereeee", resumeGameBtnValue);
+  // console.log("hereeee", resumeGameBtnValue);
   localStorage.setItem("character_id", JSON.stringify(resumeGameBtnValue));
 }
 
 async function deleteGame() {
   console.log("deleting game");
   let _id = JSON.parse(localStorage.getItem("character_id"));
-  await axios.delete("/DELETE ROUTE PENDING/_id");
+  await axios.delete(`/api/character/${_id}`);
   console.log("deleted game");
-} //TEST ONCE HAVE ROUTE
+}
 
 const CharacterCards = () => {
-  // characterHandler();
   // console.log("*", characters);
-  console.log("&", characters2);
+  // console.log("&", characters2);
   const [GetCharacters, setGetCharacters] = useState([]);
-  console.log("still working");
-  // characters = []; ***empty page if uncomment. then delete again and it correctly loads data. otherwise it wont load data  ask saturday!!!!!
+  // console.log("still working");
+  // characters = []; ***empty page if uncomment. then delete again and it correctly loads data. otherwise it wont load data
   let userid = "";
   useEffect(() => {
     let userid = ""; //need to dynamically update this based on logged in user ***
-    console.log("use effect ran");
+    // console.log("use effect ran");
     axios.get("/getUsers").then((response) => {
       userid = response.data[0]._id;
       // let userid = "612c8363094d0e5d58d38c93"; //need to dynamically update this based on logged in user ***
       axios.get(`/api/character/user/${userid}`).then((response) => {
-        console.log("1", response.data);
+        // console.log("1", response.data);
         const test = response.data;
         setGetCharacters(test);
-        console.log("2", test);
-        console.log("22", GetCharacters);
+        // console.log("2", test);
+        // console.log("22", GetCharacters);
       });
     });
   }, []);
-  // characters = JSON.stringify(characters);
 
-  // const characters2 = props.characters;
-  // console.log("###", characters2);
-  // return (
-  //   <div className="test">
-  //     <h1>test</h1>
-  //     {console.log(`^^^^${GetCharacters}`)}
-  //   </div>
-  // );
   return GetCharacters.map((character) => (
     <>
       <div
@@ -134,8 +125,5 @@ const CharacterCards = () => {
     </>
   ));
 };
-
-//on click (resume game), needs to store the character._id so we can access it to send put requests to update score. maybe store in local storage??
-//on click (delete game), needs to send axios delete to an API delete route that will delete the character
 
 export default CharacterCards;
