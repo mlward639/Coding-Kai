@@ -143,7 +143,7 @@ const CharacterCards = () => {
   ));
 };
 
-//on click (resume game), needs to store the character._id so we can access it to send put requests to update score. maybe store in local storage??
-//on click (delete game), needs to send axios delete to an API delete route that will delete the character
+// on click (resume game), needs to store the character._id so we can access it to send put requests to update score. maybe store in local storage??
+// on click (delete game), needs to send axios delete to an API delete route that will delete the character
 
 export default CharacterCards;
