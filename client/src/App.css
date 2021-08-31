@@ -1,11 +1,10 @@
 /* * {
   pi
 } */
-#root{
-  margin:0;
-  padding:0
+#root {
+  margin: 0;
+  padding: 0;
 }
-
 
 :root {
   --darkGray: rgb(22, 22, 22);
@@ -24,7 +23,7 @@ body {
 
 .signupPageContainer,
 .loginPageContainer {
-  border: 2px solid pink;
+  /* border: 2px solid pink; */
   width: 100vw;
 }
 
@@ -33,7 +32,7 @@ body {
   display: flex;
   width: 100vw;
   justify-content: center;
-  border: 2px purple solid;
+  /* border: 2px purple solid; */
 }
 
 .signupCard,
@@ -48,7 +47,7 @@ body {
 
 .signupForm,
 .loginForm {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   width: 115%;
   height: 100%;
   padding-left: 0;
@@ -69,7 +68,7 @@ body {
 .emailDiv,
 .passwordDiv,
 .confirmDiv {
-  border: 2px solid teal;
+  /* border: 2px solid teal; */
   padding-bottom: 6px;
   padding-top: 6px;
   margin-bottom: 9px;
@@ -106,7 +105,6 @@ body {
 .submitLoginBtn {
   background-color: var(--hotPink);
   border-radius: 25px;
-  width: 50%;
 }
 
 .loginInstead,
@@ -359,7 +357,7 @@ body {
 
 .storyDescContainer {
   /* border: 2px solid blue; */
-  margin-top: -15%;
+  margin-top: -25%;
   display: flex;
   background-color: rgba(22, 22, 22, 0.885);
   z-index: 1;
@@ -902,7 +900,7 @@ body {
   .enemyFightQuestionPage {
    visibility: hidden; 
     border: 2px solid pink;
-  } COME BACK TO THIS SHIT *** */
+  } COME BACK TO THIS *** */
 
   .MeetTeamPageContainer {
     /* border: 2px solid orange; */

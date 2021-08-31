@@ -11,12 +11,12 @@ const Homepage = () => {
   // const { loading, data } = useQuery(QUERY_PROFILES);
   // const profiles = data?.profiles || [];
   // console.log(GetCharacters[0].name, "5555");
-  localStorage.setItem('coordX', -640,);
-  localStorage.setItem('coordY', -304);
+  localStorage.setItem("coordX", -640);
+  localStorage.setItem("coordY", -304);
 
   return (
     <>
-      <h1 className="welcomeHomepage">Welcome, {username}!</h1>
+      <h1 className="welcomeHomepage">Welcome to Coding Kai!</h1>
       <div className="characterCardsContainer">
         <CharacterCards />
       </div>
@@ -32,7 +32,3 @@ const Homepage = () => {
 export default Homepage;
 
 ///*** ADD A USER ID FROM LOCAL STORAGE ONCE ITS AVAILABLE */
-
-//START NEW GAME!!! NEED TO DOOOOO! ****** !!!!!!
-
-//DO WE WANT A SELECT CHARACTER PAGE (so when they click start new game, it takes them to select character page)?? Or just randomly assign them a character??
